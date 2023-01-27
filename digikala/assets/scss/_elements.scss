@@ -5,15 +5,15 @@ html {
 
 // Headings
 // -----------------------------------------------------------------------------
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $title-color;
-  font-weight: 700;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   color: $title-color;
+//   font-weight: 700;
+// }
 
 h1 {
   font-size: 32px;
@@ -22,12 +22,12 @@ h1 {
   }
 }
 
-h2 {
-  font-size: 28px;
-  @include mq(lg) {
-    font-size: 34px;
-  }
-}
+// h2 {
+//   font-size: 28px;
+//   @include mq(lg) {
+//     font-size: 34px;
+//   }
+// }
 
 h3 {
   font-size: 24px;
