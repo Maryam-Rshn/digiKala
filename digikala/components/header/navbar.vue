@@ -18,10 +18,15 @@
         </div>
     </div>
     <div class="d-flex secondRow">
-        <div class="navigationBar d-flex">
-            <div class="categories d-flex">
-                <svg style="width: 20px; height: 20px; fill: #3f4064;"><path fill-rule="evenodd" d="M19 8V6H5v2h14zm0 3v2H5v-2h14zm0 5v2H5v-2h14z" clip-rule="evenodd"></path></svg>
-                <span>دسته‌بندی کالاها</span>
+        <div class="navigationBar d-flex" >
+            <div class="categories">
+                <div class="menu-button d-flex">
+                    <svg style="width: 20px; height: 20px; fill: #3f4064;"><path fill-rule="evenodd" d="M19 8V6H5v2h14zm0 3v2H5v-2h14zm0 5v2H5v-2h14z" clip-rule="evenodd"></path></svg>
+                    <span>دسته‌بندی کالاها</span>
+                </div>
+                <div class="dropdownMenu">
+                    <slot></slot>
+                </div>
             </div>
             <div class="navigations d-flex">
                 <div class="navigation d-flex">
@@ -60,15 +65,27 @@
 
 <script>
 export default {
+    data () {
+        return {
+        }
+    },
+    methods: {
+    },
+    mounted() {
+    }
     
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/scss/global.scss';
+
+
 .container {
     box-shadow: 0 1px 0 rgb(0 0 0 / 14%), 0 2px 0 rgb(0 0 0 / 5%);
     position: fixed;
     width: 100%;
+
 }
 .d-flex {
     display: flex;
@@ -82,7 +99,7 @@ export default {
 .searchBar {
     margin-right: 20px;
     padding: 0 16px;
-    background-color: #f1f2f4;
+    background-color: $gray-bg;
     border-radius: 8px;
     align-items: center;
     height: 44px;
@@ -92,8 +109,11 @@ export default {
     flex-basis: 60%;
     align-items: center;
 }
+.logo {
+    cursor: pointer;
+}
 .searchBar span {
-    color: #767790;
+    color: $gray-subtitle;
     font-size: 14px;
     margin-right: 16px;
     width: 100%;
@@ -106,9 +126,10 @@ export default {
     font-size: 12px;
     font-weight: 800;
     align-items: center;
-    color: #080a38;
+    color: $dark-blue-button;
     gap: 8px;
     height: 42px;
+    cursor: pointer;
 }
 .account-shoppingCart {
     align-items: center;
@@ -121,25 +142,42 @@ export default {
 }
 .shoppingCart {
     margin: 0 8px;
+    cursor: pointer;
 }
 .secondRow {
     padding: 0 16px;
     justify-content: space-between;
     align-items: center;
     height: 40px;
+    position: relative;
 }
 .secondRow svg path {
     transform: scale(.8);
 }
 .categories {
+    position: relative;
+    display: inline-block;
+}
+.dropdownMenu {
+    height: 536px;
+    width: 1402px;
+    position: absolute;
+    right: 0;
+    display: none;
+}
+.categories:hover .dropdownMenu {
+    display: block;
+}
+.menu-button {
     margin-left: 20px;
     font-size: 14px;
     font-weight: 700;
-    color: #3f4064;
+    color: $dark-blue-title;
     height: 40px;
     align-items: center;
     gap: 2px;
     position: relative;
+    cursor: pointer;
 }
 .navigations {
     align-items: center;
@@ -149,10 +187,13 @@ export default {
     padding: 0 12px;
     gap: 4px;
     font-size: 14px;
-    color: #5a5c7a;
     height: 40px;
     align-items: center;
     position: relative;
+    cursor: pointer;
+    span {
+        color: $gray-title;
+    }
 }
 .navigation span {
     direction: rtl;
@@ -166,29 +207,30 @@ export default {
 }
 .location {
     font-size: 14px;
-    color: #3f4064;
+    color: $dark-blue-title;
     gap: 8px;
     position: relative;
+    cursor: pointer;
 }
-.navigation::after, .categories::after {
+.navigation::after, .menu-button::after {
     content: "";
     position: absolute;
     width: 0;
-    background-color: #ef394e;
+    background-color: $red-hover;
     transition: all .2s ease;
     bottom: 0;
     height: 2px;
     left: 0;
     border-radius: 8px 8px 0 0;
 }
-.navigation:hover::after, .categories:hover::after {
+.navigation:hover::after, .menu-button:hover::after {
     width: 100%;
 }
 .location::after {
     content: "لطفا شهر خود را انتخاب کنید";
     max-width: 320px;
     border: 1px solid #23254e;
-    background-color: #3f4064;
+    background-color: $dark-blue-title;
     color: white;
     border-radius: 4px;
     padding: 12px;
