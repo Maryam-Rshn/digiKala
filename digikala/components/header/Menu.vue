@@ -60,6 +60,7 @@ export default {
   border-radius: 0 0 8px 8px;
   height: 100%;
   width: 100%;
+  background-color: white;
   box-shadow: 0 1px 1px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 30%);
   ::-webkit-scrollbar {
     width: 8px;

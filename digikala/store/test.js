@@ -3,13 +3,16 @@
 
 export const state = () =>({
     categories: [],
-    selected: []
+    carouselData: []
 })
 
 export const mutations = {
     setCategories(state, categories) {
       state.categories = categories
     },
+    setCarouselData(state, carouselData) {
+        state.carouselData = carouselData
+    }
 }
 
 
@@ -405,5 +408,44 @@ export const actions = {
             
         ]
         commit('setCategories',categories)
+        const carouselData = [
+            {
+                id : 9,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/aba9343a3d3f58f84911bd41962ab36fdd50566b_1674896164.jpg?x-oss-process=image/quality,q_95'
+            },
+            {
+                id: 1,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/373d17aaed831fade693a91c51e015146f1748ff_1674843034.jpg?x-oss-process=image/quality,q_95'
+            },
+            {
+                id: 2,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/fc2203391992497462569f0f64b3e165e9faee33_1674851447.jpg?x-oss-process=image/quality,q_95'
+            },
+            {
+                id: 4,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/ccdbe89a141a0c2d5e0d480bd1e8a1ad5439e07b_1674851795.jpg?x-oss-process=image/quality,q_95'
+            },
+            {
+                id: 8,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/27e4190beeb21d60d911a17dc1014956176df902_1674853156.jpg?x-oss-process=image/quality,q_95'
+            },
+            {
+                id: 5,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/7a83dbcb7966aed6c4bba7e9f881a4101e9d6d63_1674657120.jpg?x-oss-process=image/quality,q_95'
+            },
+            {
+                id: 3,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/a376b92314e4f67700de7a38c79862820b1aa364_1674853442.jpg?x-oss-process=image/quality,q_95'
+            },
+            {
+                id: 11,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/328f61af8c1835396c572158fb3fd9bb5c40317d_1674853814.jpg?x-oss-process=image/quality,q_95'
+            },
+            {
+                id: 10,
+                img_url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/0b594d9d8c18f441c949348fc94597c3837a608b_1674852969.jpg?x-oss-process=image/quality,q_95'
+            }
+        ]
+        commit('setCarouselData',carouselData)
     },
 }  
