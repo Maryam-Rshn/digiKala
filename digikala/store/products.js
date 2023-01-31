@@ -232,62 +232,92 @@ export const actions = {
             {
                 id: 15,
                 category_name : 'کالاهای سوپرمارکتی',
-                name: 'ماکارونی فوسیلی زر ماکارون',
-                price: 19800,
+                name: 'فیله سوخاری مرغ مارین',
+                price: 290000,
                 colors: '',
                 qty: 2,
                 stars: 4.3,
-                discounted_price: '',
+                discounted_price: 183990,
                 gallery: [
-                    'https://dkstatics-public.digikala.com/digikala-products/590809fb9b3b78d6c5c10402806b247bb65bd275_1658206520.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
+                    'https://dkstatics-public.digikala.com/digikala-products/2a2edb2d78e6b23be50dd6b32c4fd7f4349b1326_1633872685.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
                 ],
                 special_delivery: true,
-                tag: 'ماکارونی پاستا و رشته'
+                tag: 'فرآورده های منجمد'
             },
             {
                 id: 16,
                 category_name : 'کالاهای سوپرمارکتی',
-                name: 'ماکارونی پنه زر ماکارون',
-                price: 27500,
+                name: 'کنسرو خوراک بادمجان طبیعت',
+                price: 22340,
                 colors: '',
                 qty: 2,
                 stars: 4.5,
-                discounted_price: 23800,
+                discounted_price: 15900,
                 gallery: [
-                    'https://dkstatics-public.digikala.com/digikala-products/590809fb9b3b78d6c5c10402806b247bb65bd275_1658206520.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
+                    'https://dkstatics-public.digikala.com/digikala-products/7b51aa3eef474ccb7caab58a18af6d115e99a84f_1639458278.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
                 ],
                 special_delivery: true,
-                tag: 'ماکارونی پاستا و رشته'
+                tag: 'فرآورده های منجمد'
             },
             {
                 id: 17,
                 category_name : 'کالاهای سوپرمارکتی',
-                name: 'ماکارونی پنه زر ماکارون',
-                price: 27500,
+                name: 'تک تک مینو',
+                price: 180000,
                 colors: '',
                 qty: 2,
                 stars: 4.5,
-                discounted_price: '',
+                discounted_price: 151500,
                 gallery: [
-                    'https://dkstatics-public.digikala.com/digikala-products/590809fb9b3b78d6c5c10402806b247bb65bd275_1658206520.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
+                    'https://dkstatics-public.digikala.com/digikala-products/111094089.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
                 ],
                 special_delivery: true,
-                tag: 'ماکارونی پاستا و رشته'
+                tag: 'فرآورده های منجمد'
             },
             {
                 id: 18,
                 category_name : 'کالاهای سوپرمارکتی',
-                name: 'ماکارونی پنه زر ماکارون',
-                price: 27500,
+                name: 'ژل ماشين ظرفشويی پريل',
+                price: 183098,
                 colors: '',
                 qty: 2,
                 stars: 4.5,
-                discounted_price: '',
+                discounted_price: 148900,
                 gallery: [
-                    'https://dkstatics-public.digikala.com/digikala-products/590809fb9b3b78d6c5c10402806b247bb65bd275_1658206520.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
+                    'https://dkstatics-public.digikala.com/digikala-products/0f756bdeb01b1cb864c7e0937a74fc7e968b3188_1652251677.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
                 ],
                 special_delivery: true,
-                tag: 'ماکارونی پاستا و رشته'
+                tag: 'فرآورده های منجمد'
+            },
+            {
+                id: 43,
+                category_name : 'کالاهای سوپرمارکتی',
+                name: 'شامپو مخصوص موهای چرب مای',
+                price: 49700,
+                colors: '',
+                qty: 2,
+                stars: 4.5,
+                discounted_price: 36900,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/949319.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
+                ],
+                special_delivery: true,
+                tag: 'فرآورده های منجمد'
+            },
+            {
+                id: 44,
+                category_name : 'کالاهای سوپرمارکتی',
+                name: 'شامپو کودک گلرنگ',
+                price: 18290,
+                colors: '',
+                qty: 2,
+                stars: 4.5,
+                discounted_price: 14900,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/2075925.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90'
+                ],
+                special_delivery: true,
+                tag: 'فرآورده های منجمد'
             },
             {
                 id: 19,
@@ -593,7 +623,7 @@ export const actions = {
                 id: 39,
                 category_name : 'ورزش و سفر',
                 name: 'چادر مسافرتی 4 نفره ',
-                price: 3878000,
+                price: 30878000,
                 colors: ['آبی','خاکستری'],
                 qty: 2,
                 stars: 4.3,
