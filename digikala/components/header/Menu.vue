@@ -12,12 +12,12 @@
         <svg style="width: 16px; height: 16px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
       </div>
       <div class="products">
-        <div v-for="(product, index) in category.products" :key="index">
+        <div v-for="(sub_category, index) in category.sub_categories" :key="index">
           <h2>
-            {{ product.title }}
+            {{ sub_category.title }}
             <svg style="width: 16px; height: 16px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
           </h2>
-          <ul v-for="(text, index) in product.subtitle" :key="index">
+          <ul v-for="(text, index) in sub_category.subtitle" :key="index">
             <li>{{ text }}</li>
           </ul>
         </div>
@@ -40,13 +40,15 @@ export default {
   },
   methods: {
     showProduct(e) {
-      let index = e - 1;
-      this.selectedCategory = []
-      this.selectedCategory.push(this.categories[index])
+      this.selectedCategory = this.categories.filter((category) => {
+        return category.id === e
+      })
+      console.log("🚀 ~ file: Menu.vue:49 ~ this.selectedCategory=this.categories.filter ~ this.selectedCategory", this.selectedCategory)
+      
     }
   },
   mounted() {
-    
+    console.log();
   }
 
 }
