@@ -1,16 +1,11 @@
 <template>
   <div class="banners-container">
-    <div class="banner" v-for="banner in firstBanner" :key="banner">
-        <img :src="banner.url" :width="banner.width" alt="">
-    </div>
+    <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-    props: {
-        firstBanner: Array,
-    },
 }
 </script>
 

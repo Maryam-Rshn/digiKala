@@ -11,8 +11,17 @@
       </Carousel>
       <SurprisingOffer :discountedProducts = "discountedProducts"/>
       <marketOffer :marketProducts = "marketProducts"/>
-      <Banners :firstBanner = "firstBanner" />
+      <Banners>
+        <div class="banner" v-for="banner in firstBanner" :key="banner">
+          <img :src="banner.url" :width="banner.width" alt="">
+        </div>
+      </Banners>
       <Categories :categories ="categories"/>
+      <Banners>
+        <div class="banner" v-for="banner in secondBanner" :key="banner">
+          <img :src="banner.url" :width="banner.width" alt="">
+        </div>
+      </Banners>
     </main>
   </div>
 </template>
@@ -35,6 +44,10 @@ export default {
         {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/3b329d6f1826df61ca90e5ee71790ab23bc53347_1674847346.jpg?x-oss-process=image/quality,q_95', width: '314px'},
         {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/2492ce832541980e22e27e8a9ed582f86b7ef003_1674914519.jpg?x-oss-process=image/quality,q_95', width: '314px'},
         {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/68e429afedae46fc1d0f151d84663b307f0b4c35_1674848296.jpg?x-oss-process=image/quality,q_95', width: '314px'}
+      ],
+      secondBanner: [
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/b7aa86fb7e6a4411f93241dbe9246a08efeeba67_1674847601.jpg?x-oss-process=image/quality,q_95', width: '644px'},
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/04b9f74a3e7a9800e46edc7c6788afd97e0f271d_1674896265.jpg?x-oss-process=image/quality,q_95', width: '644px'}
       ]
     }
   },
