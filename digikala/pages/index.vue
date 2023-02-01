@@ -10,6 +10,7 @@
         </div>
       </Carousel>
       <SurprisingOffer :discountedProducts = "discountedProducts"/>
+      <marketOffer :marketProducts = "marketProducts"/>
     </main>
   </div>
 </template>
@@ -39,12 +40,20 @@ export default {
           return product.discounted_price !== ''
         });
     },
+    marketProducts(){
+        return this.$store.state.products.products.filter((product) => {
+          if(product.discounted_price !== '' && product.category_name === 'کالاهای سوپرمارکتی') {
+            return product
+          }
+        });
+    },
   },
   components: {
     Navbar:() => import('@/components/header/navbar.vue'),
     Menu:() => import('@/components/header/Menu.vue'),
     Carousel:() => import('@/components/main/Carousel.vue'),
-    SurprisingOffer:() => import('@/components/main/surprisingOffer.vue')
+    SurprisingOffer:() => import('@/components/main/surprisingOffer.vue'),
+    marketOffer:() => import('@/components/main/marketOffer.vue')
   },
   async asyncData({store}) {
     await store.dispatch('test/getCategories')
@@ -52,7 +61,7 @@ export default {
   },
   mounted() {
     console.log(this.carouselData, 'this is carousel data');
-    console.log(this.products, 'products');
+    console.log(this.marketProducts, 'market');
   }
 }
 </script>
