@@ -12,6 +12,7 @@
       <SurprisingOffer :discountedProducts = "discountedProducts"/>
       <marketOffer :marketProducts = "marketProducts"/>
       <Banners :firstBanner = "firstBanner" />
+      <Categories :categories ="categories"/>
     </main>
   </div>
 </template>
@@ -53,6 +54,9 @@ export default {
           }
         });
     },
+    categories(){
+        return this.$store.state.test.categories;
+    },
   },
   components: {
     Navbar:() => import('@/components/header/navbar.vue'),
@@ -60,7 +64,9 @@ export default {
     Carousel:() => import('@/components/main/Carousel.vue'),
     SurprisingOffer:() => import('@/components/main/surprisingOffer.vue'),
     marketOffer:() => import('@/components/main/marketOffer.vue'),
-    Banners:() => import('@/components/main/Banners.vue')
+    Banners:() => import('@/components/main/Banners.vue'),
+    Categories:() => import('@/components/main/Categories.vue'),
+
   },
   async asyncData({store}) {
     await store.dispatch('test/getCategories')
