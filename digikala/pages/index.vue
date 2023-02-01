@@ -11,6 +11,7 @@
       </Carousel>
       <SurprisingOffer :discountedProducts = "discountedProducts"/>
       <marketOffer :marketProducts = "marketProducts"/>
+      <Banners :firstBanner = "firstBanner" />
     </main>
   </div>
 </template>
@@ -21,7 +22,6 @@ export default {
   data() {
     return {
       optionsObject : {
-        // breakpoint: 1200,
         itemsPerSlide: 1,
         itemsPerStep: 1,
         loop: true,
@@ -29,6 +29,12 @@ export default {
         itemsMargin: null,
         arrows: true
       },
+      firstBanner: [
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/16754df29710cedcbb75c2c001f518cfe7f5af09_1674633358.jpg?x-oss-process=image/quality,q_95', width: '314px'},
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/3b329d6f1826df61ca90e5ee71790ab23bc53347_1674847346.jpg?x-oss-process=image/quality,q_95', width: '314px'},
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/2492ce832541980e22e27e8a9ed582f86b7ef003_1674914519.jpg?x-oss-process=image/quality,q_95', width: '314px'},
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/68e429afedae46fc1d0f151d84663b307f0b4c35_1674848296.jpg?x-oss-process=image/quality,q_95', width: '314px'}
+      ]
     }
   },
   computed: {
@@ -53,7 +59,8 @@ export default {
     Menu:() => import('@/components/header/Menu.vue'),
     Carousel:() => import('@/components/main/Carousel.vue'),
     SurprisingOffer:() => import('@/components/main/surprisingOffer.vue'),
-    marketOffer:() => import('@/components/main/marketOffer.vue')
+    marketOffer:() => import('@/components/main/marketOffer.vue'),
+    Banners:() => import('@/components/main/Banners.vue')
   },
   async asyncData({store}) {
     await store.dispatch('test/getCategories')
