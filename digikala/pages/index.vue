@@ -12,16 +12,17 @@
       <SurprisingOffer :discountedProducts = "discountedProducts"/>
       <marketOffer :marketProducts = "marketProducts"/>
       <Banners>
-        <div class="banner" v-for="banner in firstBanner" :key="banner">
+        <div class="banner" v-for="banner in firstBanner" :key="banner.url">
           <img :src="banner.url" :width="banner.width" alt="">
         </div>
       </Banners>
       <Categories :categories ="categories"/>
       <Banners>
-        <div class="banner" v-for="banner in secondBanner" :key="banner">
+        <div class="banner" v-for="banner in secondBanner" :key="banner.url">
           <img :src="banner.url" :width="banner.width" alt="">
         </div>
       </Banners>
+      <DigikalaOffer :digikalaOffers="digikalaOffers"  />
     </main>
   </div>
 </template>
@@ -70,6 +71,9 @@ export default {
     categories(){
         return this.$store.state.test.categories;
     },
+    digikalaOffers(){
+        return this.$store.state.test.digikalaOffers
+    },
   },
   components: {
     Navbar:() => import('@/components/header/navbar.vue'),
@@ -79,6 +83,7 @@ export default {
     marketOffer:() => import('@/components/main/marketOffer.vue'),
     Banners:() => import('@/components/main/Banners.vue'),
     Categories:() => import('@/components/main/Categories.vue'),
+    DigikalaOffer:() => import('@/components/main/digikalaOffer.vue'),
 
   },
   async asyncData({store}) {
@@ -86,8 +91,7 @@ export default {
     await store.dispatch('products/getProducts')
   },
   mounted() {
-    console.log(this.carouselData, 'this is carousel data');
-    console.log(this.marketProducts, 'market');
+    console.log(this.digikalaOffers, 'digioffers');
   }
 }
 </script>
