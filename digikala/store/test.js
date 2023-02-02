@@ -3,7 +3,8 @@
 
 export const state = () =>({
     categories: [],
-    carouselData: []
+    carouselData: [],
+    digikalaOffers: []
 })
 
 export const mutations = {
@@ -12,6 +13,9 @@ export const mutations = {
     },
     setCarouselData(state, carouselData) {
         state.carouselData = carouselData
+    },
+    setDigikalaOffers(state, digikalaOffers) {
+        state.digikalaOffers = digikalaOffers
     }
 }
 
@@ -456,5 +460,22 @@ export const actions = {
             }
         ]
         commit('setCarouselData',carouselData)
+        const digikalaOffers = [
+            {category_name: 'کالای دیجیتال', offer_name: 'گوشی موبایل', img_url: 'https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1656423336.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'کالای دیجیتال', offer_name: 'هدفون، هدست و ...', img_url: 'https://dkstatics-public.digikala.com/digikala-products/2eb81b453236bf344dbac1c6b63b0c7be632763f_1606244025.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'کالای دیجیتال', offer_name: 'تبلت', img_url: 'https://dkstatics-public.digikala.com/digikala-products/519f68004e41d4023aecc713718076029204b227_1624275670.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'خانه و آشپزخانه', offer_name: 'کنسول خانگی', img_url: 'https://dkstatics-public.digikala.com/digikala-products/664d3783527b060deb7d4eedb71b5ce283adc598_1611391559.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'مد و پوشاک', offer_name: 'جوراب زنانه', img_url: 'https://dkstatics-public.digikala.com/digikala-products/61e64fa29e8db63cd7470af91958b530470b44bb_1644384552.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'مد و پوشاک', offer_name: 'کفش روزمره زنانه', img_url: 'https://dkstatics-public.digikala.com/digikala-products/d77247c07cb983a5d34af2bc19e01327ad908cf8_1667705144.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'کالای دیجیتال', offer_name: 'اسپیکر (بلندگو)', img_url: 'https://dkstatics-public.digikala.com/digikala-products/60fc16fce65b9e5bcaaa9340f2f27e6780fdfc1e_1626523959.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'کالای دیجیتال', offer_name: 'کیف و کاور گوشی', img_url: 'https://dkstatics-public.digikala.com/digikala-products/ff30c7f1b01d44f35423f0fcb56f3cb76a42ea2b_1661171000.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'کالای دیجیتال', offer_name: 'ساعت هوشمند', img_url: 'https://dkstatics-public.digikala.com/digikala-products/9a2f4ba8aaad117cbe779f75a7c785354aef7f90_1656931870.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'کالای دیجیتال', offer_name: 'لپ تاپ و الترابوک', img_url: 'https://dkstatics-public.digikala.com/digikala-products/50c904d782011abc8cb712abac1d51df2b7a2297_1671299236.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'مد و پوشاک', offer_name: 'جوراب مردانه', img_url: 'https://dkstatics-public.digikala.com/digikala-products/537140d50eb3a917f4f621041a32d5bd57cdca70_1644384374.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'کالای دیجیتال', offer_name: 'ماوس (موشواره)', img_url: 'https://dkstatics-public.digikala.com/digikala-products/2b7a3b325bc091e1792ab1e6f6747c7397b6a430_1614536233.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'اسباب بازی، کودک و نوزاد', offer_name: 'آشنایی با فنون', img_url: 'https://dkstatics-public.digikala.com/digikala-products/d0187bec8f8b7325dd61934b86481218758d9bdd_1605029963.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
+            {category_name: 'مد و پوشاک', offer_name: 'شورت زنانه', img_url: 'https://dkstatics-public.digikala.com/digikala-products/f8600d0233808b5616c22872b2357bdaf0ae5f5f_1657271034.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'}
+        ]
+        commit('setDigikalaOffers',digikalaOffers)
     },
 }  
