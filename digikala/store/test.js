@@ -4,7 +4,7 @@
 export const state = () =>({
     categories: [],
     carouselData: [],
-    digikalaOffers: []
+    sub_categories: []
 })
 
 export const mutations = {
@@ -14,8 +14,8 @@ export const mutations = {
     setCarouselData(state, carouselData) {
         state.carouselData = carouselData
     },
-    setDigikalaOffers(state, digikalaOffers) {
-        state.digikalaOffers = digikalaOffers
+    setDigikalaOffers(state, sub_categories) {
+        state.sub_categories = sub_categories
     }
 }
 
@@ -460,22 +460,176 @@ export const actions = {
             }
         ]
         commit('setCarouselData',carouselData)
-        const digikalaOffers = [
-            {category_name: 'کالای دیجیتال', offer_name: 'گوشی موبایل', img_url: 'https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1656423336.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'کالای دیجیتال', offer_name: 'هدفون، هدست و ...', img_url: 'https://dkstatics-public.digikala.com/digikala-products/2eb81b453236bf344dbac1c6b63b0c7be632763f_1606244025.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'کالای دیجیتال', offer_name: 'تبلت', img_url: 'https://dkstatics-public.digikala.com/digikala-products/519f68004e41d4023aecc713718076029204b227_1624275670.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'خانه و آشپزخانه', offer_name: 'کنسول خانگی', img_url: 'https://dkstatics-public.digikala.com/digikala-products/664d3783527b060deb7d4eedb71b5ce283adc598_1611391559.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'مد و پوشاک', offer_name: 'جوراب زنانه', img_url: 'https://dkstatics-public.digikala.com/digikala-products/61e64fa29e8db63cd7470af91958b530470b44bb_1644384552.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'مد و پوشاک', offer_name: 'کفش روزمره زنانه', img_url: 'https://dkstatics-public.digikala.com/digikala-products/d77247c07cb983a5d34af2bc19e01327ad908cf8_1667705144.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'کالای دیجیتال', offer_name: 'اسپیکر (بلندگو)', img_url: 'https://dkstatics-public.digikala.com/digikala-products/60fc16fce65b9e5bcaaa9340f2f27e6780fdfc1e_1626523959.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'کالای دیجیتال', offer_name: 'کیف و کاور گوشی', img_url: 'https://dkstatics-public.digikala.com/digikala-products/ff30c7f1b01d44f35423f0fcb56f3cb76a42ea2b_1661171000.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'کالای دیجیتال', offer_name: 'ساعت هوشمند', img_url: 'https://dkstatics-public.digikala.com/digikala-products/9a2f4ba8aaad117cbe779f75a7c785354aef7f90_1656931870.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'کالای دیجیتال', offer_name: 'لپ تاپ و الترابوک', img_url: 'https://dkstatics-public.digikala.com/digikala-products/50c904d782011abc8cb712abac1d51df2b7a2297_1671299236.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'مد و پوشاک', offer_name: 'جوراب مردانه', img_url: 'https://dkstatics-public.digikala.com/digikala-products/537140d50eb3a917f4f621041a32d5bd57cdca70_1644384374.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'کالای دیجیتال', offer_name: 'ماوس (موشواره)', img_url: 'https://dkstatics-public.digikala.com/digikala-products/2b7a3b325bc091e1792ab1e6f6747c7397b6a430_1614536233.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'اسباب بازی، کودک و نوزاد', offer_name: 'آشنایی با فنون', img_url: 'https://dkstatics-public.digikala.com/digikala-products/d0187bec8f8b7325dd61934b86481218758d9bdd_1605029963.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'},
-            {category_name: 'مد و پوشاک', offer_name: 'شورت زنانه', img_url: 'https://dkstatics-public.digikala.com/digikala-products/f8600d0233808b5616c22872b2357bdaf0ae5f5f_1657271034.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'}
+        const sub_categories = [
+            {
+                category_name: 'کالای دیجیتال', 
+                sub_category_name: 'گوشی موبایل', 
+                digi_offer: true,
+                most_visited: true,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/ec9a962187e1f82cc47e7a148ef99ec1c6fd024d_1656423336.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60',
+                    'https://dkstatics-public.digikala.com/digikala-products/e477016feaff5a6e6cf930517134eb3888c887ef_1656404674.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/4af1bad23ab1945fa5cef6a333792196e0fe850e_1656426417.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/932752a3594b8f5d1ddfa62fe4d2a29824096916_1656405344.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                ]
+            },
+            {
+                category_name: 'کالای دیجیتال', 
+                sub_category_name: 'هدفون، هدست و ...',
+                digi_offer: true,
+                most_visited: true, 
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/2eb81b453236bf344dbac1c6b63b0c7be632763f_1606244025.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60',
+                    'https://dkstatics-public.digikala.com/digikala-products/c2ca6b8c3cb72b5db2d6c7fa7eba2cb868659200_1660392399.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/50e70cb79e33843c55efd6e60985f914716ac8ef_1627128170.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/10c4be2f8f3fdc56200eaa2a3d2051f8321dc6a6_1672561043.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80'
+                ]
+            },
+            {
+                category_name: 'کالای دیجیتال', 
+                sub_category_name: 'تبلت',
+                digi_offer: true, 
+                most_visited: false,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/519f68004e41d4023aecc713718076029204b227_1624275670.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'
+                ]
+            },
+            {
+                category_name: 'خانه و آشپزخانه', 
+                sub_category_name: 'کنسول خانگی',
+                digi_offer: true,
+                most_visited: false,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/664d3783527b060deb7d4eedb71b5ce283adc598_1611391559.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'
+                ]
+            },
+            {
+                category_name: 'مد و پوشاک', 
+                sub_category_name: 'جوراب زنانه',
+                digi_offer: true,
+                most_visited: false, 
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/61e64fa29e8db63cd7470af91958b530470b44bb_1644384552.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'
+                ]
+            },
+            {
+                category_name: 'مد و پوشاک', 
+                sub_category_name: 'کفش روزمره زنانه',
+                digi_offer: true,
+                most_visited: false, 
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/d77247c07cb983a5d34af2bc19e01327ad908cf8_1667705144.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'
+                ]
+            },
+            {
+                category_name: 'کالای دیجیتال', 
+                sub_category_name: 'اسپیکر (بلندگو)',
+                digi_offer: true,
+                most_visited: false,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/60fc16fce65b9e5bcaaa9340f2f27e6780fdfc1e_1626523959.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'
+                ]
+            },
+            {
+                category_name: 'کالای دیجیتال', 
+                sub_category_name: 'کیف و کاور گوشی',
+                digi_offer: true,
+                most_visited: true,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/ff30c7f1b01d44f35423f0fcb56f3cb76a42ea2b_1661171000.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60',
+                    'https://dkstatics-public.digikala.com/digikala-products/bf7d597a5b49dbfa59597cdbaf501c7fc90c4b02_1661157451.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/cd297eac755d278da40c8d9e6cceff3ece31d4c6_1661158182.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/65d8dd322061a1c6def67cd88f72424afff837bf_1661176297.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80'
+                ]
+            },
+            {
+                category_name: 'کالای دیجیتال', 
+                sub_category_name: 'ساعت هوشمند',
+                digi_offer: true,
+                most_visited: true,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/9a2f4ba8aaad117cbe779f75a7c785354aef7f90_1656931870.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60',
+                    'https://dkstatics-public.digikala.com/digikala-products/a48de6a051009d34fe458ce768d30f800dc8e595_1656934101.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/760c0407a514c473eb40542cc8b3d5ee988f1ca2_1661263829.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/b0af2ec78668c85506c1edc260b42ff447f019c8_1667201885.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80'
+                ]
+            },
+            {
+                category_name: 'کالای دیجیتال', 
+                sub_category_name: 'لپ تاپ و الترابوک',
+                digi_offer: true,
+                most_visited: true,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/50c904d782011abc8cb712abac1d51df2b7a2297_1671299236.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60',
+                    'https://dkstatics-public.digikala.com/digikala-products/db2061f8d4863a673c325aa1559261db3efb82b6_1670159482.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/5b1029ced403ac3a2f28284e703b9b757b8685d2_1671468310.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/99fff58e2393fee11af1635106176ebc34790419_1644844789.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80'
+                ]
+            },
+            {
+                category_name: 'مد و پوشاک', 
+                sub_category_name: 'جوراب مردانه',
+                digi_offer: true,
+                most_visited: false,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/537140d50eb3a917f4f621041a32d5bd57cdca70_1644384374.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'
+                ]
+            },
+            {
+                category_name: 'کالای دیجیتال', 
+                sub_category_name: 'ماوس (موشواره)',
+                digi_offer: true,
+                most_visited: false,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/2b7a3b325bc091e1792ab1e6f6747c7397b6a430_1614536233.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'
+                ]
+            },
+            {
+                category_name: 'اسباب بازی، کودک و نوزاد', 
+                sub_category_name: 'آشنایی با فنون',
+                digi_offer: true,
+                most_visited: true,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/d0187bec8f8b7325dd61934b86481218758d9bdd_1605029963.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60',
+                    'https://dkstatics-public.digikala.com/digikala-products/114924947.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/d0e09197052640a5461ac61fc3b22b77f1eb1435_1625166217.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/e3ce9c627823fd19f7b6627ce059c889e2bd556a_1630784095.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80'
+                ]
+            },
+            {
+                category_name: 'مد و پوشاک', 
+                sub_category_name: 'شورت زنانه',
+                digi_offer: true,
+                most_visited: false,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/f8600d0233808b5616c22872b2357bdaf0ae5f5f_1657271034.jpg?x-oss-process=image/resize,m_lfit,h_350,w_350/quality,q_60'
+                ]
+            },
+            {
+                category_name: 'مد و پوشاک', 
+                sub_category_name: 'کفش ورزشی مردانه',
+                digi_offer: false,
+                most_visited: true,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/65c3e25b99953b18ea92515620dc58dd23cc3a18_1669633318.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/3b54d66b31468160ca6ac5c49d00eda78f1c5a05_1654346266.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/ab38625a30baf2719dea99870464bdeaf5216f97_1635343303.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/590d19ba5e5a20bbf9a80d505e0b24f8889ca85e_1672335141.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80'
+                ]
+            },
+            {
+                category_name: 'اسباب بازی، کودک و نوزاد', 
+                sub_category_name: 'ماشین',
+                digi_offer: false,
+                most_visited: true,
+                gallery: [
+                    'https://dkstatics-public.digikala.com/digikala-products/2ef6f567848b3c7d2a05e8b15cee279517d8f336_1612801080.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/5b28799ddbe0c06c3916d03f45dae39d206829e1_1660594815.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/121855246.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80',
+                    'https://dkstatics-public.digikala.com/digikala-products/21b820fe514e31f4715fa29e882fa521d9e363b1_1660373798.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/quality,q_80'
+                ]
+            },
         ]
-        commit('setDigikalaOffers',digikalaOffers)
+        commit('setDigikalaOffers',sub_categories)
     },
 }  

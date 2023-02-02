@@ -72,7 +72,9 @@ export default {
         return this.$store.state.test.categories;
     },
     digikalaOffers(){
-        return this.$store.state.test.digikalaOffers
+        return this.$store.state.test.sub_categories.filter((category) => {
+          return category.digi_offer === true
+        })
     },
   },
   components: {

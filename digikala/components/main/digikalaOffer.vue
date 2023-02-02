@@ -4,9 +4,9 @@
     <div class="digi-offers">
         <div class="digi-offer" v-for="category in digikalaOffers" :key="category.category_name">
             <div class="digi-image">
-                <img :src="category.img_url" width="60px" height="60px" alt="">
+                <img :src="category.gallery[0]" width="60px" height="60px" alt="">
             </div>
-            <h4>{{ category.offer_name }}</h4>
+            <h4>{{ category.sub_category_name }}</h4>
         </div>
     </div>
   </div>
@@ -68,6 +68,7 @@ export default {
         color: $dark-blue-button;
         line-height: 2.15;
         text-align: center;
+        direction: rtl;
     }
 }
 </style>
