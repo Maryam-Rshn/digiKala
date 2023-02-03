@@ -29,6 +29,21 @@
           <img :src="banner.url" :width="banner.width" alt="">
         </div>
       </Banners>
+      <mostVisited>
+        <div class="sub-category" v-for="category in fristMostVisited" :key="category.category_name">
+          <h4>{{ category.sub_category_name }}</h4>
+          <p>بر اساس بازدیدهای شما</p>
+          <div class="sub-category-gallery">
+            <div class="sub-category-image" v-for="image in category.gallery" :key="image">
+              <img :src="image" alt="">
+            </div>
+          </div>
+          <div class="seeAll">
+            <span>مشاهده</span>
+            <svg style="width: 18px; height: 18px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
+          </div>
+        </div>
+      </mostVisited>
     </main>
   </div>
 </template>
@@ -91,6 +106,11 @@ export default {
         return product.most_popular === true
       });
     },
+    fristMostVisited(){
+      return this.$store.state.test.sub_categories.filter((category) => {
+        return category.most_visited === true
+      }).slice(0,4)
+    },
   },
   components: {
     Navbar:() => import('@/components/header/navbar.vue'),
@@ -102,6 +122,7 @@ export default {
     Categories:() => import('@/components/main/Categories.vue'),
     DigikalaOffer:() => import('@/components/main/digikalaOffer.vue'),
     popularBrand:() => import('@/components/main/popularBrand.vue'),
+    mostVisited:() => import('@/components/main/mostVisited.vue'),
 
   },
   async asyncData({store}) {
@@ -109,7 +130,7 @@ export default {
     await store.dispatch('products/getProducts')
   },
   mounted() {
-    console.log(this.popularBrands, 'popularBrands');
+    console.log(this.fristMostVisited, 'fristMostVisited');
   }
 }
 </script>
