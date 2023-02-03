@@ -24,6 +24,11 @@
       </Banners>
       <DigikalaOffer :digikalaOffers="digikalaOffers"  />
       <popularBrand :popularBrands="popularBrands"  />
+      <Banners>
+        <div class="banner" v-for="banner in thirdBanner" :key="banner.url">
+          <img :src="banner.url" :width="banner.width" alt="">
+        </div>
+      </Banners>
     </main>
   </div>
 </template>
@@ -50,6 +55,10 @@ export default {
       secondBanner: [
         {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/b7aa86fb7e6a4411f93241dbe9246a08efeeba67_1674847601.jpg?x-oss-process=image/quality,q_95', width: '644px'},
         {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/04b9f74a3e7a9800e46edc7c6788afd97e0f271d_1674896265.jpg?x-oss-process=image/quality,q_95', width: '644px'}
+      ],
+      thirdBanner: [
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/b2440fd28e00b20d23107b067b8ee418a8ac9396_1674636606.jpg?x-oss-process=image/quality,q_95', width: '644px'},
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/95519d402c9db4c317e06d0f70e2870ad11ced7f_1674847897.jpg?x-oss-process=image/quality,q_95', width: '644px'}
       ]
     }
   },
