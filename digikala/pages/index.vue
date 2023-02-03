@@ -23,6 +23,7 @@
         </div>
       </Banners>
       <DigikalaOffer :digikalaOffers="digikalaOffers"  />
+      <popularBrand :popularBrands="popularBrands"  />
     </main>
   </div>
 </template>
@@ -54,27 +55,32 @@ export default {
   },
   computed: {
     carouselData(){
-        return this.$store.state.test.carouselData;
+      return this.$store.state.test.carouselData;
     },
     discountedProducts(){
-        return this.$store.state.products.products.filter((product) => {
-          return product.discounted_price !== ''
-        });
+      return this.$store.state.products.products.filter((product) => {
+        return product.discounted_price !== ''
+      });
     },
     marketProducts(){
-        return this.$store.state.products.products.filter((product) => {
-          if(product.discounted_price !== '' && product.category_name === 'کالاهای سوپرمارکتی') {
-            return product
-          }
-        });
+      return this.$store.state.products.products.filter((product) => {
+        if(product.discounted_price !== '' && product.category_name === 'کالاهای سوپرمارکتی') {
+          return product
+        }
+      });
     },
     categories(){
-        return this.$store.state.test.categories;
+      return this.$store.state.test.categories;
     },
     digikalaOffers(){
-        return this.$store.state.test.sub_categories.filter((category) => {
-          return category.digi_offer === true
-        })
+      return this.$store.state.test.sub_categories.filter((category) => {
+        return category.digi_offer === true
+      })
+    },
+    popularBrands(){
+      return this.$store.state.products.products.filter((product) => {
+        return product.most_popular === true
+      });
     },
   },
   components: {
@@ -86,6 +92,7 @@ export default {
     Banners:() => import('@/components/main/Banners.vue'),
     Categories:() => import('@/components/main/Categories.vue'),
     DigikalaOffer:() => import('@/components/main/digikalaOffer.vue'),
+    popularBrand:() => import('@/components/main/popularBrand.vue'),
 
   },
   async asyncData({store}) {
@@ -93,7 +100,7 @@ export default {
     await store.dispatch('products/getProducts')
   },
   mounted() {
-    console.log(this.digikalaOffers, 'digioffers');
+    console.log(this.popularBrands, 'popularBrands');
   }
 }
 </script>
