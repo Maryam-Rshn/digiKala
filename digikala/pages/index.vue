@@ -44,6 +44,7 @@
           </div>
         </div>
       </mostVisited>
+      <specialDelivery :specialDeliveries="specialDeliveries" />
     </main>
   </div>
 </template>
@@ -111,6 +112,11 @@ export default {
         return category.most_visited === true
       }).slice(0,4)
     },
+    specialDeliveries(){
+      return this.$store.state.products.products.filter((product) => {
+        return product.special_delivery === true
+      }).slice(0,12)
+    },
   },
   components: {
     Navbar:() => import('@/components/header/navbar.vue'),
@@ -123,6 +129,7 @@ export default {
     DigikalaOffer:() => import('@/components/main/digikalaOffer.vue'),
     popularBrand:() => import('@/components/main/popularBrand.vue'),
     mostVisited:() => import('@/components/main/mostVisited.vue'),
+    specialDelivery:() => import('@/components/main/specialDelivery.vue'),
 
   },
   async asyncData({store}) {
@@ -130,7 +137,7 @@ export default {
     await store.dispatch('products/getProducts')
   },
   mounted() {
-    console.log(this.fristMostVisited, 'fristMostVisited');
+    console.log(this.specialDeliveries, 'specialDelivery');
   }
 }
 </script>

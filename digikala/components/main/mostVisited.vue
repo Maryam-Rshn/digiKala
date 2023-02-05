@@ -1,14 +1,6 @@
 <template>
   <div class="most-visited-container">
     <slot></slot>
-    <!-- <div class="sub-category" v-for="category in fristMostVisited" :key="category.category_name">
-        <h4>{{ category.sub_category_name }}</h4>
-        <p>بر اساس بازدیدهای شما</p>
-        <div class="sub-category-gallery" v-for="image in category.gallery" :key="image">
-        <img :src="image" alt="">
-        </div>
-    </div> -->
-    <!-- 125.88 -->
   </div>
 </template>
 
