@@ -46,6 +46,21 @@
       </mostVisited>
       <specialDelivery :specialDeliveries="specialDeliveries" />
       <digiclub :digiClub="digiClub"/>
+      <mostVisited>
+        <div class="sub-category" v-for="category in secondMostVisited" :key="category.category_name">
+          <h4>{{ category.sub_category_name }}</h4>
+          <p>بر اساس بازدیدهای شما</p>
+          <div class="sub-category-gallery">
+            <div class="sub-category-image" v-for="image in category.gallery" :key="image">
+              <img :src="image" alt="">
+            </div>
+          </div>
+          <div class="seeAll">
+            <span>مشاهده</span>
+            <svg style="width: 18px; height: 18px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
+          </div>
+        </div>
+      </mostVisited>
     </main>
   </div>
 </template>
@@ -135,6 +150,11 @@ export default {
         return product.special_delivery === true
       }).slice(0,12)
     },
+    secondMostVisited(){
+      return this.$store.state.test.sub_categories.filter((category) => {
+        return category.most_visited === true
+      }).slice(4)
+    },
   },
   components: {
     Navbar:() => import('@/components/header/navbar.vue'),
@@ -157,7 +177,7 @@ export default {
     await store.dispatch('products/getProducts')
   },
   mounted() {
-    console.log(this.specialDeliveries, 'specialDelivery');
+    console.log(this.secondMostVisited, 'secondMostVisited');
   }
 }
 </script>
