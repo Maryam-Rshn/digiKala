@@ -68,6 +68,7 @@
         </div>
       </Banners>
       <discountedProducts :discountedProducts="discountedProducts" />
+      <blogs :blogs="blogs"/>
     </main>
   </div>
 </template>
@@ -118,6 +119,24 @@ export default {
           text: 'جایزه ها',
           img_url: 'https://www.digikala.com/statics/img/png/digiclub/awards.png'
         }
+      ],
+      blogs: [
+        {
+          img_url: 'https://www.digikala.com/mag/wp-content/uploads/2023/02/macbook-pro-m1-wallpaper-610x380.jpg',
+          title: 'نقد و بررسی MacBook Pro M1؛ هم‌تراز با مدل ایر اما بهینه‌ یافته‌تر',
+        },
+        {
+          img_url: 'https://www.digikala.com/mag/wp-content/uploads/2023/02/Untitled-2-5-610x380.jpg',
+          title: 'سری گلکسی S23 از قابلیت آپدیت بی‌وقفه پشتیبانی نمی‌کند',
+        },
+        {
+          img_url: 'https://www.digikala.com/mag/wp-content/uploads/2022/05/Untitled-3-23-610x380.jpg',
+          title: 'نکات مهم قبل از فروش گوشی دست دوم که باید بدانید',
+        },
+        {
+          img_url: 'https://www.digikala.com/mag/wp-content/uploads/2020/05/Untitled-3-25-610x380.jpg',
+          title: 'مشکل دانلود از گوگل پلی استور و ۱۵ روش برای حل آن',
+        },
       ]
     }
   },
@@ -191,6 +210,7 @@ export default {
     digiclub:() => import('@/components/main/digiclub.vue'),
     bestSelling:() => import('@/components/main/bestSelling.vue'),
     discountedProducts:() => import('@/components/main/discountedProducts.vue'),
+    blogs:() => import('@/components/main/blogs.vue'),
 
 
   },
