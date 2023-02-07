@@ -61,6 +61,7 @@
           </div>
         </div>
       </mostVisited>
+      <bestSelling :bestSelling="bestSelling" />
     </main>
   </div>
 </template>
@@ -155,6 +156,11 @@ export default {
         return category.most_visited === true
       }).slice(4)
     },
+    bestSelling(){
+      return this.$store.state.products.products.filter((product) => {
+        return product.best_selling === true
+      })
+    },
   },
   components: {
     Navbar:() => import('@/components/header/navbar.vue'),
@@ -169,6 +175,7 @@ export default {
     mostVisited:() => import('@/components/main/mostVisited.vue'),
     specialDelivery:() => import('@/components/main/specialDelivery.vue'),
     digiclub:() => import('@/components/main/digiclub.vue'),
+    bestSelling:() => import('@/components/main/bestSelling.vue'),
 
 
   },
@@ -177,7 +184,7 @@ export default {
     await store.dispatch('products/getProducts')
   },
   mounted() {
-    console.log(this.secondMostVisited, 'secondMostVisited');
+    console.log(this.bestSelling, 'bestSelling');
   }
 }
 </script>
