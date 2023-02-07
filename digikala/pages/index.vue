@@ -9,7 +9,7 @@
           <img :src="item.img_url" alt="">
         </div>
       </Carousel>
-      <SurprisingOffer :discountedProducts = "discountedProducts"/>
+      <SurprisingOffer :SurprisingProducts = "SurprisingProducts"/>
       <marketOffer :marketProducts = "marketProducts"/>
       <Banners>
         <div class="banner" v-for="banner in firstBanner" :key="banner.url">
@@ -67,6 +67,7 @@
           <img :src="banner.url" :width="banner.width" alt="">
         </div>
       </Banners>
+      <discountedProducts :discountedProducts="discountedProducts" />
     </main>
   </div>
 </template>
@@ -124,7 +125,7 @@ export default {
     carouselData(){
       return this.$store.state.test.carouselData;
     },
-    discountedProducts(){
+    SurprisingProducts(){
       return this.$store.state.products.products.filter((product) => {
         return product.discounted_price !== ''
       });
@@ -169,6 +170,11 @@ export default {
         return product.best_selling === true
       })
     },
+    discountedProducts(){
+      return this.$store.state.products.products.filter((product) => {
+        return product.discounted_price !== ''
+      }).slice(0,12)
+    },
   },
   components: {
     Navbar:() => import('@/components/header/navbar.vue'),
@@ -184,6 +190,7 @@ export default {
     specialDelivery:() => import('@/components/main/specialDelivery.vue'),
     digiclub:() => import('@/components/main/digiclub.vue'),
     bestSelling:() => import('@/components/main/bestSelling.vue'),
+    discountedProducts:() => import('@/components/main/discountedProducts.vue'),
 
 
   },
@@ -192,7 +199,7 @@ export default {
     await store.dispatch('products/getProducts')
   },
   mounted() {
-    console.log(this.bestSelling, 'bestSelling');
+    console.log(this.discountedProducts, 'discountedProducts');
   }
 }
 </script>

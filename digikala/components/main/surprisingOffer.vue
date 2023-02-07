@@ -19,7 +19,7 @@
                 </span>
             </div>
             <div class="products-container">
-                <div class="box-product" v-for="product in discountedProducts" :key="product.id">
+                <div class="box-product" v-for="product in SurprisingProducts" :key="product.id">
                     <img :src="product.gallery[0]" alt="" height="150px" width="150px">
                     <div class="discounted-price">
                         <span>
@@ -49,7 +49,7 @@
 <script>
 export default {
     props: {
-        discountedProducts: Array,
+        SurprisingProducts: Array,
     },
     data() {
         return {
