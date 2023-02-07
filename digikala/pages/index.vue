@@ -62,6 +62,11 @@
         </div>
       </mostVisited>
       <bestSelling :bestSelling="bestSelling" />
+      <Banners>
+        <div class="banner" v-for="banner in fourthBanner" :key="banner.url">
+          <img :src="banner.url" :width="banner.width" alt="">
+        </div>
+      </Banners>
     </main>
   </div>
 </template>
@@ -92,6 +97,9 @@ export default {
       thirdBanner: [
         {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/b2440fd28e00b20d23107b067b8ee418a8ac9396_1674636606.jpg?x-oss-process=image/quality,q_95', width: '644px'},
         {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/95519d402c9db4c317e06d0f70e2870ad11ced7f_1674847897.jpg?x-oss-process=image/quality,q_95', width: '644px'}
+      ],
+      fourthBanner: [
+        {url: 'https://dkstatics-public.digikala.com/digikala-adservice-banners/a99fae011b87c8315f36486129126d041357055a_1675262625.jpg?x-oss-process=image/quality,q_95', width: '1310px'}
       ],
       digiClub: [
         {
