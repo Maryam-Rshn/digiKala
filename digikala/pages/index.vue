@@ -70,6 +70,7 @@
       <discountedProducts :discountedProducts="discountedProducts" />
       <blogs :blogs="blogs"/>
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -211,6 +212,7 @@ export default {
     bestSelling:() => import('@/components/main/bestSelling.vue'),
     discountedProducts:() => import('@/components/main/discountedProducts.vue'),
     blogs:() => import('@/components/main/blogs.vue'),
+    Footer:() => import('@/components/footer/Footer.vue'),
 
 
   },
