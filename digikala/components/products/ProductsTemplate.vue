@@ -102,10 +102,8 @@ export default {
             ]
         } 
     },
-    computed: {
-        categoryProducts() {
-            return this.$store.state.products.products;
-        }
+    props: {
+        categoryProducts: Array,
     },
 
     methods: {

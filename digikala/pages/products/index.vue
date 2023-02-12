@@ -3,7 +3,7 @@
     <Navbar>
       <Menu/>
     </Navbar>
-    <products />
+    <products :categoryProducts="categoryProducts"/>
   </div>
 </template>
 
@@ -12,8 +12,18 @@ export default {
     components: {
       Navbar:() => import('@/components/header/navbar.vue'),
       Menu:() => import('@/components/header/Menu.vue'),
-      products:() => import('@/components/main/ProductsTemplate.vue'),
-    }
+      products:() => import('@/components/products/ProductsTemplate.vue'),
+    },
+    computed: {
+      categoryProducts() {
+        return this.$store.state.products.products.filter((product) => {
+          return product.category_name === this.$route.params.category
+        });
+      }
+    },
+    created() {
+      console.log(this.$route.params.category, 'this is params')
+    },
 
 }
 </script>

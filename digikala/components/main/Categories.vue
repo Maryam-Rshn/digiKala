@@ -3,8 +3,10 @@
     <h3>دسته‌بندی‌های دیجی‌کالا</h3>
     <div class="categories">
         <span v-for="category in categories" :key="category.id">
-            <img :src="category.img_url" width="170px" height="170px" alt="">
-            <p>{{ category.name }}</p>
+            <NuxtLink :to="{name: 'products', params: {category: category.name } }" class="nuxtLink">
+                <img :src="category.img_url" width="170px" height="170px" alt="">
+                <p>{{ category.name }}</p>
+            </NuxtLink>
         </span>
     </div>
   </div>

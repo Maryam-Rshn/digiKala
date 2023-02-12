@@ -14,7 +14,9 @@
       <div class="inner" ref="inner">
         <div class="brands-container">
           <div class="brand-box" v-for="product in popularBrands" :key="product.id">
-            <img :src="product.brand_logo" alt="" >
+            <NuxtLink :to="{name: 'products', params: {category: product.category_name } }" class="nuxtLink">
+              <img :src="product.brand_logo" alt="" >
+            </NuxtLink>
           </div>
         </div>
       </div>

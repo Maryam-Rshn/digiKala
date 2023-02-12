@@ -3,10 +3,12 @@
     <h2>پیشنهاد دیجی‌کالا</h2>
     <div class="digi-offers">
         <div class="digi-offer" v-for="category in digikalaOffers" :key="category.category_name">
-            <div class="digi-image">
-                <img :src="category.gallery[0]" width="60px" height="60px" alt="">
-            </div>
-            <h4>{{ category.sub_category_name }}</h4>
+            <NuxtLink :to="{name: 'products', params: {category: category.category_name } }" class="nuxtLink">
+                <div class="digi-image">
+                    <img :src="category.gallery[0]" width="60px" height="60px" alt="">
+                </div>
+                <h4>{{ category.sub_category_name }}</h4>
+            </NuxtLink>
         </div>
     </div>
   </div>

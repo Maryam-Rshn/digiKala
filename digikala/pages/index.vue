@@ -6,7 +6,9 @@
     <main>
       <Carousel :optionsObject = "optionsObject">
         <div class="slides" v-for="item in carouselData" :key="item.id">
-          <img :src="item.img_url" alt="">
+          <NuxtLink :to="{name: 'products', params: {category: item.category_name } }" class="nuxtLink">
+            <img :src="item.img_url" alt="">
+          </NuxtLink>
         </div>
       </Carousel>
       <SurprisingOffer :SurprisingProducts = "SurprisingProducts"/>
@@ -38,10 +40,12 @@
               <img :src="image" alt="">
             </div>
           </div>
-          <div class="seeAll">
-            <span>مشاهده</span>
-            <svg style="width: 18px; height: 18px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
-          </div>
+          <NuxtLink :to="{name: 'products', params: {category: category.category_name } }" class="nuxtLink-seeAll">
+            <div class="seeAll">
+              <span>مشاهده</span>
+              <svg style="width: 18px; height: 18px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
+            </div>
+          </NuxtLink>
         </div>
       </mostVisited>
       <specialDelivery :specialDeliveries="specialDeliveries" />
@@ -55,10 +59,12 @@
               <img :src="image" alt="">
             </div>
           </div>
-          <div class="seeAll">
-            <span>مشاهده</span>
-            <svg style="width: 18px; height: 18px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
-          </div>
+          <NuxtLink :to="{name: 'products', params: {category: category.category_name } }" class="nuxtLink-seeAll">
+            <div class="seeAll">
+              <span>مشاهده</span>
+              <svg style="width: 18px; height: 18px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
+            </div>
+          </NuxtLink>
         </div>
       </mostVisited>
       <bestSelling :bestSelling="bestSelling" />
@@ -70,6 +76,9 @@
       <discountedProducts :discountedProducts="discountedProducts" />
       <blogs :blogs="blogs"/>
     </main>
+    <nuxt-link to="/products">
+      products
+    </nuxt-link>
     <Footer />
   </div>
 </template>
@@ -235,5 +244,9 @@ body {
 main {
   padding-top: 108px;
   z-index: 0;
+}
+.nuxtLink-seeAll {
+  display: flex;
+  justify-content: center;
 }
 </style>

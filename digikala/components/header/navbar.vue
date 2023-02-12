@@ -2,7 +2,9 @@
   <div class="container">
     <div class="d-flex firstRow">
         <div class="logo-searchBar d-flex">
-            <img src="https://www.digikala.com/statics/img/svg/logo.svg" alt="" class="logo" width="115px" height="30px">
+            <nuxt-link to="/">
+                <img src="https://www.digikala.com/statics/img/svg/logo.svg" alt="" class="logo" width="115px" height="30px">
+            </nuxt-link>
             <div class="searchBar d-flex">
                 <svg style="width: 24px; height: 24px; fill: #9e9fb1;"><path fill-rule="evenodd" d="M10.5 18a7.5 7.5 0 115.973-2.963l4.369 4.246-1.394 1.434-4.387-4.263A7.467 7.467 0 0110.5 18zm5.5-7.5a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0z" clip-rule="evenodd"></path></svg>
                 <span>جستجو</span>
@@ -85,7 +87,7 @@ export default {
     box-shadow: 0 1px 0 rgb(0 0 0 / 14%), 0 2px 0 rgb(0 0 0 / 5%);
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     background-color: white;
 
 }
