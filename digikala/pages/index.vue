@@ -76,13 +76,9 @@
       <discountedProducts :discountedProducts="discountedProducts" />
       <blogs :blogs="blogs"/>
     </main>
-    <nuxt-link to="/products">
-      products
-    </nuxt-link>
     <Footer />
   </div>
 </template>
-
 <script>
 export default {
   name: 'IndexPage',

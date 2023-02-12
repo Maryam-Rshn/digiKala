@@ -64,8 +64,12 @@
                                 <div class="flex-row qty-1" v-if="categoryProduct.qty === 1">
                                     <p>تنها ۱ عدد در انبار باقی مانده</p>
                                 </div>
+                                <div class="flex-row digiPlus-delivery" v-else>
+                                    <svg style="width: 18px; height: 18px;"><path fill-rule="evenodd" d="M11.539 1.083l.224-.054a1 1 0 01.452-.006A6.098 6.098 0 0117 6.98v2.486l2.555 1.703a1 1 0 01.394.516l2 6a1 1 0 01-1.145 1.297L15.9 18H8.099l-4.903.98a1 1 0 01-1.145-1.296l2-6a1 1 0 01.394-.516L7 9.465V6.979a6.104 6.104 0 014.539-5.896zM7 11.868v4.312l-2.507.501 1.346-4.039L7 11.868zM15 10v6H9V6.979a4.099 4.099 0 012.839-3.9L12 3.03l.178.054A4.099 4.099 0 0115 6.98V10zm2 6.18l2.506.501-1.346-4.039-1.16-.773v4.311zM10 9a2 2 0 114 0 2 2 0 01-4 0zm0 13v-3H8v3h2zm6-3v3h-2v-3h2zm-3 4v-4h-2v4h2z" clip-rule="evenodd"></path></svg>
+                                    <p>ارسال امروز ویژه دیجی‌پلاس</p>
+                                </div>
                                 <div class="flex-row">
-                                    <p>۴.۳</p>
+                                    <p>{{ categoryProduct.stars }}</p>
                                     <svg fill="#f9bc00" width="16" height="16" id="starFill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                         <path d="M11.98 2.1a.455.455 0 00-.414.315L9.426 9.05l-6.97-.014a.455.455 0 00-.268.823l5.648 4.087-2.169 6.628a.455.455 0 00.7.509L12 16.973l5.634 4.11a.455.455 0 00.7-.509l-2.169-6.628 5.648-4.087a.455.455 0 00-.267-.823l-6.97.014-2.144-6.635a.455.455 0 00-.451-.315z"></path>
                                     </svg>
@@ -244,18 +248,6 @@ export default {
         cursor: pointer;
     }
 }
-
-// .plus-services{
-//     p:first-child{
-//         display: flex;
-//         flex-flow: row nowrap;
-//         justify-content: space-between;
-//         align-items: center;
-//         svg{
-//             margin-right: 5px;
-//         }
-//     }
-// }
 
 .existed-goods{
     div{
@@ -451,6 +443,8 @@ export default {
     p{
         letter-spacing: 0.4px;
         font-weight: 700;
+        font-size: 15px;
+        height: 38px;
     }
     margin-top: 40px;
 }
@@ -465,18 +459,26 @@ export default {
 .existence{
     svg{
         margin-left: 5px;
-    }
-    & div:first-child{
-        p{
-            color: #62666d;
-        }
-    }    
+    }   
 }
 .qty-1 {
     p {
         color: $red-hover;
         font-size: 11px;
     }
+}
+.digiPlus-delivery {
+    svg {
+        fill: #a63489;
+        path {
+            transform: scale(.8);
+        }
+    }
+    p {
+        color: #62666d;
+        font-size: 11px;
+        font-weight: 700;
+    } 
 }
 
 .price{
@@ -485,9 +487,15 @@ export default {
     align-items: center;
     justify-content: flex-end;
     margin-top: 10px;
-    p{
-        font-size: 1.1em;
-        font-weight: 700;
+
+    :first-child {
+        display: flex;
+        align-items: center;
+        p{
+            font-size: 16px;
+            font-weight: 700;
+            color: #3f4064;
+        }
     }
 }
 
