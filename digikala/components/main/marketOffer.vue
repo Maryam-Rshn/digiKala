@@ -15,10 +15,12 @@
                 </div>
             </div>
         </div>
-        <div class="show-all-products">
-            <span>بیش از ۹۰ کالا</span>
-            <svg style="width: 20px; height: 20px;"><path fill-rule="evenodd" d="M11.293 19.707l1.414-1.414L7.414 13H20v-2H7.414l5.293-5.293-1.414-1.414-7 7a1 1 0 000 1.414l7 7z" clip-rule="evenodd"></path></svg>
-        </div>
+        <NuxtLink :to="{name: 'products', params: {category: 'کالاهای سوپرمارکتی' } }" class="nuxtLink">
+            <div class="show-all-products">
+                <span>بیش از ۹۰ کالا</span>
+                <svg style="width: 20px; height: 20px;"><path fill-rule="evenodd" d="M11.293 19.707l1.414-1.414L7.414 13H20v-2H7.414l5.293-5.293-1.414-1.414-7 7a1 1 0 000 1.414l7 7z" clip-rule="evenodd"></path></svg>
+            </div>
+        </NuxtLink>
     </div>
   </div>
 </template>
@@ -70,6 +72,7 @@ export default {
     top: 0;
     left: 0px;
     height: 100%;
+    z-index: 0;
 }
 .label {
     display: flex;
@@ -146,5 +149,8 @@ export default {
             transform: scale(.8);
         }
     }
+}
+.nuxtLink {
+    z-index: 4;
 }
 </style>
