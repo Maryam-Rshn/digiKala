@@ -2,8 +2,10 @@
   <div class=" hamburgerMenu dir-rtl">
     <div class="menu-categories">
       <div v-for="category in categories" :key="category.id" @mouseover="showProduct(category.id)"  class="dir-rtl category">
-        <svg v-html="category.svg_path" style="width: 18px; height: 18px; "></svg>
-        <span>{{ category.name }}</span>
+        <NuxtLink :to="{name: 'products', params: {category: category.name } }" class="nuxtLink">
+          <svg v-html="category.svg_path" style="width: 18px; height: 18px; "></svg>
+          <span>{{ category.name }}</span>
+        </NuxtLink>
       </div>
     </div>
     <div v-for="category in selectedCategory" :key="category.id" class="menu-product" >
@@ -44,6 +46,7 @@ export default {
         return category.id === e
       })
       console.log("🚀 ~ file: Menu.vue:49 ~ this.selectedCategory=this.categories.filter ~ this.selectedCategory", this.selectedCategory)
+      console.log("this.categories", this.categories)
       
     }
   },
