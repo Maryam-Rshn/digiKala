@@ -625,5 +625,13 @@ export default {
         align-items: center;
     } 
 }
-
+.product-description-returning-section {
+    padding-top: 15px;
+    p {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 2.17;
+        color: #767790;
+    }
+}
 </style>

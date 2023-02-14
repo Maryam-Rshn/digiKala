@@ -9,10 +9,12 @@
         <img class="background-image" src="https://www.digikala.com/statics/img/svg/typography/freshPattern.svg" alt="">
         <div class="products">
             <div class="product" v-for="product in marketProducts" :key="product.id">
-                <img :src="product.gallery[0]" alt="" height="58px" width="58px">
-                <div class="discount-percent">
-                    {{ calculateDiscount(product.price, product.discounted_price) }}%
-                </div>
+                <NuxtLink :to="{name: 'products-id', params: {id: product.id } }" class="nuxtLink">
+                    <img :src="product.gallery[0]" alt="" height="58px" width="58px">
+                    <div class="discount-percent">
+                        {{ calculateDiscount(product.price, product.discounted_price) }}%
+                    </div>
+                </NuxtLink>
             </div>
         </div>
         <NuxtLink :to="{name: 'products', params: {category: 'کالاهای سوپرمارکتی' } }" class="nuxtLink">

@@ -21,7 +21,9 @@
         </div>
         <div class="digiplus-products">
             <div class="digiplus-product" v-for="product in specialDeliveries" :key="product.id">
-                <img :src="product.gallery[0]" width="116px" height="116px" alt="">
+                <NuxtLink :to="{name: 'products-id', params: {id: product.id } }" class="nuxtLink">
+                    <img :src="product.gallery[0]" width="116px" height="116px" alt="">
+                </NuxtLink>
             </div>
         </div>
     </div>

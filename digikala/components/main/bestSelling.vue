@@ -8,10 +8,12 @@
         <p>مشاهده همه</p>
     </div>
     <div class="bestSelling-products">
-        <div class="product" v-for="(product, index) in bestSelling" :key="product.id">
-            <img :src="product.gallery[0]" width="86px" height="86px" alt="">
-            <span>{{ index + 1 }}</span>
-            <p>{{ product.name }}</p>
+        <div  v-for="(product, index) in bestSelling" :key="product.id">
+            <NuxtLink :to="{name: 'products-id', params: {id: product.id } }" class="product">
+                <img :src="product.gallery[0]" width="86px" height="86px" alt="">
+                <span>{{ index + 1 }}</span>
+                <p>{{ product.name }}</p>
+            </NuxtLink>
         </div>
     </div>
   </div>
@@ -72,9 +74,11 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-flow: row-reverse wrap;
+    align-items: center;
     row-gap: 20px;
     .product {
-        width: 306.5px;
+        max-width: 306.5px;
+        min-width: 306.5px;
         display: flex;
         align-items: center;
         direction: rtl;
