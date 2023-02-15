@@ -1,8 +1,5 @@
 <template>
   <div>
-    <Navbar>
-      <Menu/>
-    </Navbar>
     <main>
       <Carousel :optionsObject = "optionsObject">
         <div class="slides" v-for="item in carouselData" :key="item.id">
@@ -76,7 +73,6 @@
       <discountedProducts :discountedProducts="discountedProducts" />
       <blogs :blogs="blogs"/>
     </main>
-    <Footer />
   </div>
 </template>
 <script>

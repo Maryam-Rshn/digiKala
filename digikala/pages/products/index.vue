@@ -1,8 +1,5 @@
 <template>
   <div>
-    <Navbar>
-      <Menu/>
-    </Navbar>
     <products :categoryProducts="categoryProducts"/>
   </div>
 </template>
