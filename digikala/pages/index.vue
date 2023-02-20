@@ -220,6 +220,7 @@ export default {
   async asyncData({store}) {
     await store.dispatch('test/getCategories')
     await store.dispatch('products/getProducts')
+    await store.dispatch('comments/getComments')
   },
   mounted() {
     console.log(this.discountedProducts, 'discountedProducts');

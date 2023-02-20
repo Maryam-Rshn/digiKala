@@ -172,17 +172,93 @@
                 </div>
             </div>
         </div>
+        <div class="productFeatures_productOpinions" v-for="product in categoryProduct" :key="product.id">
+            <div class="directions">
+                <span>مشخصات</span>
+                <span>دیدگاه‌ها</span>
+            </div>
+            <div class="product_features">
+                <h1 class="features_opinions_title">مشخصات</h1>
+                <div class="features_container">
+                    <h2>مشخصات</h2>
+                    <div class="features_content">
+                        <div class="feature_content" v-for="feature in product.features" :key="feature.title">
+                            <p>{{ feature.title }}</p>
+                            <span>{{ feature.content }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product_opinions">
+                <div class="dark_background" v-if="isInputActive" @click="diactivateInput()"></div>
+                <div class="add_opinion_input" v-if="isInputActive">
+                    <div class="title_cancel">
+                        <button @click="diactivateInput()"><svg iconColor="high-emphasis" style="width: 24px; height: 24px;"><path fill-rule="evenodd" d="M18.364 7.05L16.95 5.636 12 10.586l-4.95-4.95L5.636 7.05l4.95 4.95-4.95 4.95 1.414 1.414 4.95-4.95 4.95 4.95 1.414-1.414-4.95-4.95 4.95-4.95z" clip-rule="evenodd"></path></svg></button>
+                        <h1>دیدگاه‌ خود را درباره این کالا ثبت کنید</h1>
+                    </div>
+                    <div class="input">
+                        <input type="text" v-model="newOpinion.context">
+                    </div>
+                    <div class="registration">
+                        <button :disabled="!newOpinion.context" @click="addOpinion()">ثبت دیدگاه</button>
+                        <p>
+                            ثبت پرسش به معنی موافقت با
+                            <span>قوانین انتشار دیجی‌کالا</span>
+                            است.
+                        </p>
+                    </div>
+                </div>
+                <h1 class="features_opinions_title">دیدگاه‌ها</h1>
+                <div class="opinions_container">
+                    <div class="add_opinion">
+                        <p>شما هم درباره این کالا دیدگاه ثبت کنید</p>
+                        <button @click="activateInput()">ثبت دیدگاه</button>
+                    </div>
+                    <div class="opinions_content" v-if="productComments[0].product_comments">
+                        <div class="opinion" v-for="comment in productComments[0].product_comments" :key="comment.comment_id" >
+                            <div class="opinion_text">
+                                <svg style="width: 24px; height: 24px;"><path fill-rule="evenodd" d="M8 2h8a6 6 0 016 6v8a6 6 0 01-6 6H8a6 6 0 01-6-6V8a6 6 0 016-6zm0 2a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4H8zm2 6H8V9a3 3 0 013-3h2a3 3 0 013 3v.93a3 3 0 01-1.336 2.496l-1.219.812a1 1 0 00-.445.832V15h-2v-.93a3 3 0 011.336-2.496l1.219-.812A1 1 0 0014 9.93V9a1 1 0 00-1-1h-2a1 1 0 00-1 1v1zm1 6h2v2h-2v-2z" clip-rule="evenodd"></path></svg>
+                                <h2>{{ comment.context }}</h2>
+                            </div>
+                            <span class="opinion_reply" v-for="reply in comment.replies" :key="reply.reply_context">
+                                <span>پاسخ</span>
+                                <p>{{ reply.reply_context }}</p>
+                            </span>
+                            <div class="likes_dislikes">
+                                <p class="likes_dislikes_text">آیا این دیدگاه  مفید بود؟</p>
+                                <span class="likes">
+                                    <svg style="width: 20px; height: 20px;"><path fill-rule="evenodd" d="M7.5 8l3.15-4.2a4.5 4.5 0 013.6-1.8 2.483 2.483 0 012.449 2.89L16.18 8h2.424a3 3 0 012.951 3.537l-.974 5.357A5 5 0 0115.661 21h-6.55c-.148 0-.294-.033-.428-.096l-.824-.39A1 1 0 017 21H3a1 1 0 01-1-1V9a1 1 0 011-1h4.5zm.5 2v8.367L9.336 19h6.326a3 3 0 002.951-2.463l.974-5.358A1 1 0 0018.603 10H15a1 1 0 01-.986-1.164l.712-4.274A.482.482 0 0014.25 4a2.5 2.5 0 00-2 1L8.8 9.6a1 1 0 01-.8.4zm-2 0H4v9h2v-9z" clip-rule="evenodd"></path></svg>
+                                    <p>{{ comment.likes }}</p>
+                                </span>
+                                <span class="dislikes">
+                                    <svg style="width: 20px; height: 20px;"><path fill-rule="evenodd" d="M7.5 16l3.15 4.2a4.5 4.5 0 003.6 1.8 2.482 2.482 0 002.449-2.89L16.18 16h2.424a3 3 0 002.951-3.537l-.974-5.357A5 5 0 0015.661 3h-6.55a1 1 0 00-.428.096l-.824.39A1 1 0 007 3H3a1 1 0 00-1 1v11a1 1 0 001 1h4.5zm.5-2V5.633L9.336 5h6.326a3 3 0 012.951 2.463l.974 5.358A1 1 0 0118.603 14H15a1 1 0 00-.986 1.164l.712 4.274a.482.482 0 01-.476.562 2.5 2.5 0 01-2-1L8.8 14.4A1 1 0 008 14zm-2 0H4V5h2v9z" clip-rule="evenodd"></path></svg>
+                                    <p>{{ comment.dislike }}</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 </template>
 
 <script>
 export default {
     props: {
         categoryProduct: Array,
+        productComments: Array
     },
     data(){
         return {
             color:'',
+            isInputActive: false,
+            newOpinion: {
+                            context:"",
+                            likes:0,
+                            dislike:0,
+                            replies:[]
+                        },
         }
     },
     methods: {
@@ -203,12 +279,29 @@ export default {
             const result = 100 - roundedNumber
 
             return result
+        },
+        activateInput() {
+            this.isInputActive = true
+        },
+        diactivateInput() {
+            this.isInputActive = false
+        },
+        addOpinion () {
+            this.$store.commit('comments/ADD_USER_OPINION',{id: this.$route.params.id, data: {...this.newOpinion}})
+            this.newOpinion.context= ''
+            this.isInputActive= false
         }
+    },
+    mounted() {
+        console.log(this.productComments, "this is product comment");
     }
 }
 </script>
 
 <style lang="scss" scoped>
+button {
+    cursor: pointer;
+}
 .product-page-container {
     padding-top: 108px;
     direction: rtl;
@@ -633,5 +726,262 @@ export default {
         line-height: 2.17;
         color: #767790;
     }
+}
+.productFeatures_productOpinions {
+    padding: 0 20px;
+}
+.directions {
+    display: flex;
+    border-bottom: 1px solid #e0e0e6;
+    span {
+        padding: 8px 16px;
+        font-size: 12px;
+        color: #767790;
+        line-height: 2.17;
+        font-weight: 700;
+    }
+}
+.product_features, .product_opinions {
+    margin-top: 16px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid #f1f2f4;
+    position: relative;
+    z-index: 1;
+}
+.features_opinions_title {
+    padding: 12px 0 8px;
+    font-size: 16px;
+    color: #080a38;
+    line-height: 2.15;
+    font-weight: 700;
+    border-bottom: 2px solid #ef394e;
+    width: fit-content;
+    margin-bottom: 12px;
+}
+.features_container {
+    padding: 16px 0;
+    display: flex;
+    gap: 48px;
+    h2 {
+        width: 256px;
+        font-size: 16px;
+        color: #3f4064;
+        line-height: 2.15;
+        font-weight: 700;
+    }
+}
+.features_content {
+    div {
+        display: flex;
+        align-items: center;
+        p {
+            width: 200px;
+            font-size: 14px;
+            color: #767790;
+            line-height: 2.15;
+            font-weight: 700;
+            padding: 12px 8px;
+            margin-left: 16px; 
+        }
+        span {
+            width: 532px;
+            font-size: 14px;
+            color: #080a38;
+            line-height: 2.15;
+            font-weight: 700;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f2f4;
+        }
+    }
+}
+.opinions_container {
+    display: flex;
+    margin-top: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+}
+.add_opinion {
+    padding: 0 8px 12px;
+    p {
+        margin: 12px 0 20px;
+        font-size: 10px;
+        color: #3f4064;
+        line-height: 2.15;
+        font-weight: 700;
+        width: 240px;
+    }
+    button {
+        border: 1px solid #ef4056;
+        border-radius: 8px;
+        font-size: 12px;
+        color: #ef4056;
+        line-height: 2.17;
+        font-weight: 700;
+        width: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        padding: 8px 16px;
+        margin-top: 8px;
+    }
+}
+.opinions_content {
+    width: 756px;
+}
+.opinion {
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e6;
+    .opinion_text {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        h2 {
+            font-size: 15px;
+            color: #000000;
+            line-height: 2.15;
+            font-weight: 700;
+        }
+        svg {
+            fill: #19bfd3;
+        }
+    }
+    .likes_dislikes {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 12px;
+        .likes_dislikes_text {
+            color: #767790;
+            font-size: 12px;
+            line-height: 2.15;
+            font-weight: 700;
+            margin-left: 24px;
+
+        }
+        span {
+            padding-right: 16px;
+            p {
+                color: #767790;
+                font-size: 12px;
+                line-height: 2.15;
+                font-weight: 700;
+            }
+            display: flex;
+            align-items: center;
+            svg {
+                cursor: pointer;
+                fill: #767790;
+                path {
+                    transform: scale(.8);
+                }
+            }
+        }
+    }
+    .opinion_reply {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 5px 0;
+
+        span {
+            color: #5a5c7a;
+            font-size: 11px;
+            line-height: 2.15;
+            font-weight: 700;
+        }
+        p {
+            color: #5a5c7a;
+            font-size: 14px;
+            line-height: 2.15;
+            font-weight: 700;
+        }
+    }
+}
+.add_opinion_input {
+    position: absolute;
+    right: 35%;
+    top: 10%;
+    background-color: white;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #e0e0e6;
+    z-index: 3;
+    .title_cancel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        width: 100%;
+        direction: ltr;
+        border-bottom: 1px solid #e0e0e6;
+        h1 {
+            color: #080a38;
+            font-size: 16px;
+            line-height: 2.15;
+            font-weight: 700;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            svg {
+                fill: #3f4064;
+            }
+        }
+    }
+    .input {
+        width: 100%;
+        padding: 16px 20px;
+        border-bottom: 1px solid #e0e0e6;
+        input {
+            border: 1px solid #c3c3ce;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            height: 93px;
+        }
+    }
+    .registration {
+        padding: 16px 20px;
+        width: 100%;
+        button {
+            background-color: #ef4056;
+            border: 1px solid transparent;
+            color: #fff;
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        button:disabled {
+            background-color: #e0e0e6;
+        }
+        p {
+            text-align: center;
+            color: #000000;
+            font-size: 10px;
+            font-weight: 700;
+            margin-top: 8px;
+            span {
+                color: #19bfd3;
+                margin: 0 4px;
+            }
+        }
+    }
+}
+.dark_background {
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    height: 500%;
+    width: 110%;
+    position: absolute;
+    right: -20px;
+    bottom: -100%;
 }
 </style>

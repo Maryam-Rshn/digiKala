@@ -1,6 +1,6 @@
 <template>
   <div>
-    <product :categoryProduct="categoryProduct" />
+    <product :categoryProduct="categoryProduct" :productComments="productComments"/>
   </div>
 </template>
 
@@ -13,6 +13,11 @@ export default {
       categoryProduct() {
         return this.$store.state.products.products.filter((product) => {
           return product.id === this.$route.params.id
+        });
+      },
+      productComments() {
+        return this.$store.state.comments.comments.filter((comment) => {
+          return comment.product_id === this.$route.params.id
         });
       }
     },
