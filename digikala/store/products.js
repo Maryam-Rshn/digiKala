@@ -34,7 +34,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'اپل'
+                tag: 'اپل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۷۴ گرم'},
+                    {title: 'فناوری صفحه نمایش', content: 'Super Retina XDR OLED'},
+                    {title: 'بازه اندازه صفحه نمایش', content: '۶.۰ اینچ'},
+                    {title: 'توضیحات سیم کارت', content: 'سایز نانو'},
+                ]
             },
             {
                 id: 2,
@@ -51,7 +58,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'اپل'
+                tag: 'اپل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۷۴ گرم'},
+                    {title: 'فناوری صفحه نمایش', content: 'Super Retina XDR OLED'},
+                    {title: 'بازه اندازه صفحه نمایش', content: '۶.۰ اینچ'},
+                    {title: 'توضیحات سیم کارت', content: 'سایز نانو'},
+                ]
             },
             {
                 id: 3,
@@ -70,7 +84,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'شیائومی',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/2994.png?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'شیائومی'
+                tag: 'شیائومی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۷۴ گرم'},
+                    {title: 'فناوری صفحه نمایش', content: 'Super Retina XDR OLED'},
+                    {title: 'بازه اندازه صفحه نمایش', content: '۶.۰ اینچ'},
+                    {title: 'توضیحات سیم کارت', content: 'سایز نانو'},
+                ]
             },
             {
                 id: 4,
@@ -89,7 +110,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'سامسونگ',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/3960.jpg?x-oss-process=image/resize,m_lfit,h_120,w_120/quality,q_80',
-                tag: 'سامسونگ'
+                tag: 'سامسونگ',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۷۴ گرم'},
+                    {title: 'فناوری صفحه نمایش', content: 'Super Retina XDR OLED'},
+                    {title: 'بازه اندازه صفحه نمایش', content: '۶.۰ اینچ'},
+                    {title: 'توضیحات سیم کارت', content: 'سایز نانو'},
+                ]
             },
             {
                 id: 5,
@@ -106,7 +134,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'اپل'
+                tag: 'اپل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۷۴ گرم'},
+                    {title: 'فناوری صفحه نمایش', content: 'Super Retina XDR OLED'},
+                    {title: 'بازه اندازه صفحه نمایش', content: '۶.۰ اینچ'},
+                    {title: 'توضیحات سیم کارت', content: 'سایز نانو'},
+                ]
             },
             {
                 id: 6,
@@ -123,7 +158,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'اپل'
+                tag: 'اپل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۷۴ گرم'},
+                    {title: 'فناوری صفحه نمایش', content: 'Super Retina XDR OLED'},
+                    {title: 'بازه اندازه صفحه نمایش', content: '۶.۰ اینچ'},
+                    {title: 'توضیحات سیم کارت', content: 'سایز نانو'},
+                ]
             },
             {
                 id: 7,
@@ -142,7 +184,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'سیلیکون پاور',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/3518.png?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'کامپیوتر و تجهیزات جانبی'
+                tag: 'کامپیوتر و تجهیزات جانبی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۲۰ گرم'},
+                    {title: 'نوع اتصال', content: 'با سیم'},
+                    {title: 'سرعت انتقال داده ها', content: '۵ گیگابایت بر ثانیه'},
+                    {title: 'ظرفیت', content: 'یک ترابایت'},
+                ]
             },
             {
                 id: 8,
@@ -159,7 +208,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'دوربین عکاسی دیجیتال'
+                tag: 'دوربین عکاسی دیجیتال',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۲۰ گرم'},
+                    {title: 'نوع اتصال', content: 'با سیم'},
+                    {title: 'سرعت انتقال داده ها', content: '۵ گیگابایت بر ثانیه'},
+                    {title: 'ظرفیت', content: 'یک ترابایت'},
+                ]
             },
             {
                 id: 9,
@@ -178,7 +234,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'شهر گلس',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/c672197e1b856916470b6b0f755063b10516fdfb_1642246341.jpg?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'لوازم جانبی گوشی موبایل'
+                tag: 'لوازم جانبی گوشی موبایل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۲۰ گرم'},
+                    {title: 'نوع اتصال', content: 'با سیم'},
+                    {title: 'سرعت انتقال داده ها', content: '۵ گیگابایت بر ثانیه'},
+                    {title: 'ظرفیت', content: 'یک ترابایت'},
+                ]
             },
             {
                 id: 10,
@@ -195,7 +258,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'نردبان'
+                tag: 'نردبان',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۰ کیلوگرم'},
+                    {title: 'بازه حداکثر ارتفاع', content: '۲.۱ تا ۳ متر'},
+                    {title: 'تعداد پله', content: '۵'},
+                    {title: 'جنس', content: 'آهن'},
+                ]
             },
             {
                 id: 11,
@@ -212,7 +282,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'نردبان'
+                tag: 'نردبان',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۰ کیلوگرم'},
+                    {title: 'بازه حداکثر ارتفاع', content: '۲.۱ تا ۳ متر'},
+                    {title: 'تعداد پله', content: '۵'},
+                    {title: 'جنس', content: 'آهن'},
+                ]
             },
             {
                 id: 12,
@@ -229,7 +306,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'نردبان'
+                tag: 'نردبان',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۰ کیلوگرم'},
+                    {title: 'بازه حداکثر ارتفاع', content: '۲.۱ تا ۳ متر'},
+                    {title: 'تعداد پله', content: '۵'},
+                    {title: 'جنس', content: 'آهن'},
+                ]
             },
             {
                 id: 13,
@@ -246,7 +330,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'ساعت'
+                tag: 'ساعت',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۷۴ گرم'},
+                    {title: 'فناوری صفحه نمایش', content: 'Super Retina XDR OLED'},
+                    {title: 'بازه اندازه صفحه نمایش', content: '۶.۰ اینچ'},
+                    {title: 'توضیحات سیم کارت', content: 'سایز نانو'},
+                ]
             },
             {
                 id: 14,
@@ -263,7 +354,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'ساعت'
+                tag: 'ساعت',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۱۷۴ گرم'},
+                    {title: 'فناوری صفحه نمایش', content: 'Super Retina XDR OLED'},
+                    {title: 'بازه اندازه صفحه نمایش', content: '۶.۰ اینچ'},
+                    {title: 'توضیحات سیم کارت', content: 'سایز نانو'},
+                ]
             },
             {
                 id: 15,
@@ -280,7 +378,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'فرآورده های منجمد'
+                tag: 'فرآورده های منجمد',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۴۰۰ گرم'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                    {title: 'روش نگهداری', content: 'یخچال'},
+                    {title: 'شکل ماده غذایی', content: 'قالبی'},
+                ]
             },
             {
                 id: 16,
@@ -297,7 +402,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'فرآورده های منجمد'
+                tag: 'فرآورده های منجمد',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۴۰۰ گرم'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                    {title: 'روش نگهداری', content: 'یخچال'},
+                    {title: 'شکل ماده غذایی', content: 'قالبی'},
+                ]
             },
             {
                 id: 17,
@@ -316,7 +428,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'کاله',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/311.png?x-oss-process=image/resize,m_lfit,h_120,w_120/quality,q_80',
-                tag: 'لبنیات'
+                tag: 'لبنیات',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۴۰۰ گرم'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                    {title: 'روش نگهداری', content: 'یخچال'},
+                    {title: 'شکل ماده غذایی', content: 'قالبی'},
+                ]
             },
             {
                 id: 18,
@@ -335,7 +454,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'پريل',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/2c36ceb629598fa31b9b321fcd4e47773bd93ef7_1649498016.png?x-oss-process=image/resize,m_lfit,h_120,w_120/quality,q_80',
-                tag: 'مواد شوینده'
+                tag: 'مواد شوینده',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۴۰۰ گرم'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                    {title: 'روش نگهداری', content: 'یخچال'},
+                    {title: 'شکل ماده غذایی', content: 'قالبی'},
+                ]
             },
             {
                 id: 43,
@@ -354,7 +480,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'مای',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/3972.png?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'لوازم بهداشتی'
+                tag: 'لوازم بهداشتی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۴۰۰ گرم'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                    {title: 'روش نگهداری', content: 'یخچال'},
+                    {title: 'شکل ماده غذایی', content: 'قالبی'},
+                ]
             },
             {
                 id: 44,
@@ -371,7 +504,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'فرآورده های منجمد'
+                tag: 'فرآورده های منجمد',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'وزن', content: '۴۰۰ گرم'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                    {title: 'روش نگهداری', content: 'یخچال'},
+                    {title: 'شکل ماده غذایی', content: 'قالبی'},
+                ]
             },
             {
                 id: 19,
@@ -388,7 +528,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'گلدان سنتی'
+                tag: 'گلدان سنتی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'استان تولید', content: 'همدان'},
+                    {title: 'تکنیک ساخت و تزئین', content: 'قالبی'},
+                    {title: 'قابلیت ها', content: 'قابلیت نگهداری آب'},
+                    {title: 'جنس', content: 'سفال'},
+                ]
             },
             {
                 id: 20,
@@ -405,7 +552,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'گلدان سنتی'
+                tag: 'گلدان سنتی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'استان تولید', content: 'همدان'},
+                    {title: 'تکنیک ساخت و تزئین', content: 'قالبی'},
+                    {title: 'قابلیت ها', content: 'قابلیت نگهداری آب'},
+                    {title: 'جنس', content: 'سفال'},
+                ]
             },
             {
                 id: 21,
@@ -422,7 +576,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'گلدان سنتی'
+                tag: 'گلدان سنتی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'استان تولید', content: 'همدان'},
+                    {title: 'تکنیک ساخت و تزئین', content: 'قالبی'},
+                    {title: 'قابلیت ها', content: 'قابلیت نگهداری آب'},
+                    {title: 'جنس', content: 'سفال'},
+                ]
             },
             {
                 id: 22,
@@ -439,7 +600,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'گلدان سنتی'
+                tag: 'گلدان سنتی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'استان تولید', content: 'همدان'},
+                    {title: 'تکنیک ساخت و تزئین', content: 'قالبی'},
+                    {title: 'قابلیت ها', content: 'قابلیت نگهداری آب'},
+                    {title: 'جنس', content: 'سفال'},
+                ]
             },
             {
                 id: 23,
@@ -456,7 +624,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'لباس کودک و لباس نوزادی'
+                tag: 'لباس کودک و لباس نوزادی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'طرح', content: 'چاپ'},
+                    {title: 'آستین', content: 'بلند'},
+                    {title: 'مورد استفاده', content: 'روزمره'},
+                    {title: 'جنس', content: 'نخ پنبه'},
+                ]
             },
             {
                 id: 24,
@@ -473,7 +648,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'لباس کودک و لباس نوزادی'
+                tag: 'لباس کودک و لباس نوزادی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'طرح', content: 'چاپ'},
+                    {title: 'آستین', content: 'بلند'},
+                    {title: 'مورد استفاده', content: 'روزمره'},
+                    {title: 'جنس', content: 'نخ پنبه'},
+                ]
             },
             {
                 id: 25,
@@ -490,7 +672,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'لباس کودک و لباس نوزادی'
+                tag: 'لباس کودک و لباس نوزادی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'طرح', content: 'چاپ'},
+                    {title: 'آستین', content: 'بلند'},
+                    {title: 'مورد استفاده', content: 'روزمره'},
+                    {title: 'جنس', content: 'نخ پنبه'},
+                ]
             },
             {
                 id: 26,
@@ -507,7 +696,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'لباس کودک و لباس نوزادی'
+                tag: 'لباس کودک و لباس نوزادی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'طرح', content: 'چاپ'},
+                    {title: 'آستین', content: 'بلند'},
+                    {title: 'مورد استفاده', content: 'روزمره'},
+                    {title: 'جنس', content: 'نخ پنبه'},
+                ]
             },
             {
                 id: 27,
@@ -524,7 +720,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'آرایش چشم'
+                tag: 'آرایش چشم',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'صادر کننده مجوز', content: 'سازمان غذا و دارو'},
+                    {title: 'حجم', content: '۱۵ میلی لیتر'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                ]
             },
             {
                 id: 28,
@@ -543,7 +746,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'شون',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/bff03daf9cf71a71b7e41b31255ba9e747d1a01f_1644133724.jpg?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'مراقبت پوست'
+                tag: 'مراقبت پوست',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'صادر کننده مجوز', content: 'سازمان غذا و دارو'},
+                    {title: 'حجم', content: '۱۵ میلی لیتر'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                ]
             },
             {
                 id: 29,
@@ -562,7 +772,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'بایو آکوا',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/627f3a8485f2884e7ae2951adf0761fc3792495e_1627386509.png?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'مراقبت پوست'
+                tag: 'مراقبت پوست',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'صادر کننده مجوز', content: 'سازمان غذا و دارو'},
+                    {title: 'حجم', content: '۱۵ میلی لیتر'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                ]
             },
             {
                 id: 30,
@@ -581,7 +798,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'لافارر',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/1313.png?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'مراقبت پوست'
+                tag: 'مراقبت پوست',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'صادر کننده مجوز', content: 'سازمان غذا و دارو'},
+                    {title: 'حجم', content: '۱۵ میلی لیتر'},
+                    {title: 'شماره پروانه بهداشت', content: '۴۹/ظ/۱۴۳۸'},
+                ]
             },
             {
                 id: 31,
@@ -598,7 +822,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'مبل'
+                tag: 'مبل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'ارتفاع پایه تا نشیمنگاه', content: '۷ سانتی متر'},
+                    {title: 'عرض', content: '۹۰ سانتی متر'},
+                    {title: 'عمق', content: '۷ سانتی متر'},
+                ]
             },
             {
                 id: 32,
@@ -615,7 +846,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'مبل'
+                tag: 'مبل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'ارتفاع پایه تا نشیمنگاه', content: '۷ سانتی متر'},
+                    {title: 'عرض', content: '۹۰ سانتی متر'},
+                    {title: 'عمق', content: '۷ سانتی متر'},
+                ]
             },
             {
                 id: 33,
@@ -634,7 +872,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'چشمه نور',
                 brand_logo: 'https://dkstatics-public.digikala.com/digikala-brands/9f74161dd136485ac79f5ca5e829b2340419b084_1666776495.jpg?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'مبل'
+                tag: 'مبل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'ارتفاع پایه تا نشیمنگاه', content: '۷ سانتی متر'},
+                    {title: 'عرض', content: '۹۰ سانتی متر'},
+                    {title: 'عمق', content: '۷ سانتی متر'},
+                ]
             },
             {
                 id: 34,
@@ -651,7 +896,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'مبل'
+                tag: 'مبل',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'ارتفاع پایه تا نشیمنگاه', content: '۷ سانتی متر'},
+                    {title: 'عرض', content: '۹۰ سانتی متر'},
+                    {title: 'عمق', content: '۷ سانتی متر'},
+                ]
             },
             {
                 id: 35,
@@ -668,7 +920,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'سازهای زهی'
+                tag: 'سازهای زهی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'اندازه', content: '۴/۴'},
+                    {title: 'عرض', content: '۹۰ سانتی متر'},
+                    {title: 'جنس', content: 'رزوود هندی'},
+                ]
             },
             {
                 id: 36,
@@ -685,7 +944,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'سازهای زهی'
+                tag: 'سازهای زهی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'اندازه', content: '۴/۴'},
+                    {title: 'عرض', content: '۹۰ سانتی متر'},
+                    {title: 'جنس', content: 'رزوود هندی'},
+                ]
             },
             {
                 id: 37,
@@ -704,7 +970,14 @@ export const actions = {
                 best_selling: true,
                 brand_name: 'مستر راد',
                 brand_logo: 'https://dkstatics-public-2.digikala.com/digikala-brands/100009092.jpg?x-oss-process=image/resize,m_lfit,h_160,w_160/quality,q_80',
-                tag: 'کتاب، لوازم تحریر و هنر'
+                tag: 'کتاب، لوازم تحریر و هنر',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'اندازه', content: '۴/۴'},
+                    {title: 'عرض', content: '۹۰ سانتی متر'},
+                    {title: 'جنس', content: 'رزوود هندی'},
+                ]
             },
             {
                 id: 38,
@@ -721,7 +994,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'سازهای زهی'
+                tag: 'سازهای زهی',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'اندازه', content: '۴/۴'},
+                    {title: 'عرض', content: '۹۰ سانتی متر'},
+                    {title: 'جنس', content: 'رزوود هندی'},
+                ]
             },
             {
                 id: 39,
@@ -738,7 +1018,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'چادر'
+                tag: 'چادر',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'تعداد', content: 'یک عدد'},
+                    {title: 'مناسب برای', content: 'کمپینگ'},
+                    {title: 'جنس', content: 'پلی استر'},
+                ]
             },
             {
                 id: 40,
@@ -755,7 +1042,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'چادر'
+                tag: 'چادر',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'تعداد', content: 'یک عدد'},
+                    {title: 'مناسب برای', content: 'کمپینگ'},
+                    {title: 'جنس', content: 'پلی استر'},
+                ]
             },
             {
                 id: 41,
@@ -772,7 +1066,14 @@ export const actions = {
                 special_delivery: true,
                 most_popular: false,
                 best_selling: false,
-                tag: 'چادر'
+                tag: 'چادر',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'تعداد', content: 'یک عدد'},
+                    {title: 'مناسب برای', content: 'کمپینگ'},
+                    {title: 'جنس', content: 'پلی استر'},
+                ]
             },
             {
                 id: 42,
@@ -789,7 +1090,14 @@ export const actions = {
                 special_delivery: false,
                 most_popular: false,
                 best_selling: false,
-                tag: 'چادر'
+                tag: 'چادر',
+                features: [
+                    {title: 'ابعاد', content: '۱۴۶.۷۶×۷۱.۵'},
+                    {title: 'شماره مجوز', content: '۵۷۴۸۳۸۹۱۸'},
+                    {title: 'تعداد', content: 'یک عدد'},
+                    {title: 'مناسب برای', content: 'کمپینگ'},
+                    {title: 'جنس', content: 'پلی استر'},
+                ]
             },
         ]
         commit('setProducts',products)
