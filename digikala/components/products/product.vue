@@ -190,8 +190,8 @@
                 </div>
             </div>
             <div class="product_opinions">
-                <div class="dark_background" v-if="isInputActive" @click="diactivateInput()"></div>
-                <div class="add_opinion_input" v-if="isInputActive">
+                <div class="dark_background" v-if="isBackgroundActive" @click="diactivateInput()"></div>
+                <div class="add_opinion_input opinion_input" v-if="isInputActive">
                     <div class="title_cancel">
                         <button @click="diactivateInput()"><svg iconColor="high-emphasis" style="width: 24px; height: 24px;"><path fill-rule="evenodd" d="M18.364 7.05L16.95 5.636 12 10.586l-4.95-4.95L5.636 7.05l4.95 4.95-4.95 4.95 1.414 1.414 4.95-4.95 4.95 4.95 1.414-1.414-4.95-4.95 4.95-4.95z" clip-rule="evenodd"></path></svg></button>
                         <h1>دیدگاه‌ خود را درباره این کالا ثبت کنید</h1>
@@ -227,13 +227,38 @@
                             <div class="likes_dislikes">
                                 <p class="likes_dislikes_text">آیا این دیدگاه  مفید بود؟</p>
                                 <span class="likes">
-                                    <svg style="width: 20px; height: 20px;"><path fill-rule="evenodd" d="M7.5 8l3.15-4.2a4.5 4.5 0 013.6-1.8 2.483 2.483 0 012.449 2.89L16.18 8h2.424a3 3 0 012.951 3.537l-.974 5.357A5 5 0 0115.661 21h-6.55c-.148 0-.294-.033-.428-.096l-.824-.39A1 1 0 017 21H3a1 1 0 01-1-1V9a1 1 0 011-1h4.5zm.5 2v8.367L9.336 19h6.326a3 3 0 002.951-2.463l.974-5.358A1 1 0 0018.603 10H15a1 1 0 01-.986-1.164l.712-4.274A.482.482 0 0014.25 4a2.5 2.5 0 00-2 1L8.8 9.6a1 1 0 01-.8.4zm-2 0H4v9h2v-9z" clip-rule="evenodd"></path></svg>
+                                    <svg @click="addLike(comment.comment_id)" style="width: 20px; height: 20px;"><path fill-rule="evenodd" d="M7.5 8l3.15-4.2a4.5 4.5 0 013.6-1.8 2.483 2.483 0 012.449 2.89L16.18 8h2.424a3 3 0 012.951 3.537l-.974 5.357A5 5 0 0115.661 21h-6.55c-.148 0-.294-.033-.428-.096l-.824-.39A1 1 0 017 21H3a1 1 0 01-1-1V9a1 1 0 011-1h4.5zm.5 2v8.367L9.336 19h6.326a3 3 0 002.951-2.463l.974-5.358A1 1 0 0018.603 10H15a1 1 0 01-.986-1.164l.712-4.274A.482.482 0 0014.25 4a2.5 2.5 0 00-2 1L8.8 9.6a1 1 0 01-.8.4zm-2 0H4v9h2v-9z" clip-rule="evenodd"></path></svg>
                                     <p>{{ comment.likes }}</p>
                                 </span>
                                 <span class="dislikes">
-                                    <svg style="width: 20px; height: 20px;"><path fill-rule="evenodd" d="M7.5 16l3.15 4.2a4.5 4.5 0 003.6 1.8 2.482 2.482 0 002.449-2.89L16.18 16h2.424a3 3 0 002.951-3.537l-.974-5.357A5 5 0 0015.661 3h-6.55a1 1 0 00-.428.096l-.824.39A1 1 0 007 3H3a1 1 0 00-1 1v11a1 1 0 001 1h4.5zm.5-2V5.633L9.336 5h6.326a3 3 0 012.951 2.463l.974 5.358A1 1 0 0118.603 14H15a1 1 0 00-.986 1.164l.712 4.274a.482.482 0 01-.476.562 2.5 2.5 0 01-2-1L8.8 14.4A1 1 0 008 14zm-2 0H4V5h2v9z" clip-rule="evenodd"></path></svg>
+                                    <svg @click="addDislikes(comment.comment_id)" style="width: 20px; height: 20px;"><path fill-rule="evenodd" d="M7.5 16l3.15 4.2a4.5 4.5 0 003.6 1.8 2.482 2.482 0 002.449-2.89L16.18 16h2.424a3 3 0 002.951-3.537l-.974-5.357A5 5 0 0015.661 3h-6.55a1 1 0 00-.428.096l-.824.39A1 1 0 007 3H3a1 1 0 00-1 1v11a1 1 0 001 1h4.5zm.5-2V5.633L9.336 5h6.326a3 3 0 012.951 2.463l.974 5.358A1 1 0 0118.603 14H15a1 1 0 00-.986 1.164l.712 4.274a.482.482 0 01-.476.562 2.5 2.5 0 01-2-1L8.8 14.4A1 1 0 008 14zm-2 0H4V5h2v9z" clip-rule="evenodd"></path></svg>
                                     <p>{{ comment.dislike }}</p>
                                 </span>
+                            </div>
+                            <div class="add_new_reply">
+                                <button @click="activateReplyInput(comment.comment_id)">
+                                    ثبت پاسخ جدید
+                                    <svg style="width: 16px; height: 16px;"><path d="M11.414 12l4.293 4.293-1.414 1.414-5-5a1 1 0 010-1.414l5-5 1.414 1.414L11.414 12z"></path></svg>
+                                </button>
+                            </div>
+                            <div class="add_opinion_input replyInput" v-if="isReplyInputActive && comment.comment_id === id">
+                                <div class="title_cancel">
+                                    <button @click="diactivateInput()"><svg iconColor="high-emphasis" style="width: 24px; height: 24px;"><path fill-rule="evenodd" d="M18.364 7.05L16.95 5.636 12 10.586l-4.95-4.95L5.636 7.05l4.95 4.95-4.95 4.95 1.414 1.414 4.95-4.95 4.95 4.95 1.414-1.414-4.95-4.95 4.95-4.95z" clip-rule="evenodd"></path></svg></button>
+                                    <h1>به این دیدگاه پاسخ دهید</h1>
+                                </div>
+                                <div class="input">
+                                    <h2>{{ comment.context }}</h2>
+                                    <p>پاسخ</p>
+                                    <input type="text" v-model="newReply.reply_context">
+                                </div>
+                                <div class="registration">
+                                    <button :disabled="!newReply.reply_context" @click="addReply(comment.comment_id)">ثبت پاسخ</button>
+                                    <p>
+                                        ثبت پرسش به معنی موافقت با
+                                        <span>قوانین انتشار دیجی‌کالا</span>
+                                        است.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -253,12 +278,17 @@ export default {
         return {
             color:'',
             isInputActive: false,
+            isReplyInputActive: false,
+            isBackgroundActive: false,
             newOpinion: {
-                            context:"",
-                            likes:0,
-                            dislike:0,
-                            replies:[]
-                        },
+                comment_id:null,
+                context:"",
+                likes:0,
+                dislike:0,
+                replies:[]
+            },
+            newReply: {reply_context: ''},
+            id: null,
         }
     },
     methods: {
@@ -282,14 +312,38 @@ export default {
         },
         activateInput() {
             this.isInputActive = true
+            this.isBackgroundActive = true
         },
         diactivateInput() {
             this.isInputActive = false
+            this.isBackgroundActive = false
+            this.isReplyInputActive = false
+        },
+        activateReplyInput(id) {
+            this.isReplyInputActive = true
+            this.isBackgroundActive = true
+            this.id= id
+            console.log(this.id, 'this is id');
         },
         addOpinion () {
+            const randomId = function(length = 6) {
+                return Math.random().toString(36).substring(2, length+2);
+            }
+            this.newOpinion.comment_id = randomId
             this.$store.commit('comments/ADD_USER_OPINION',{id: this.$route.params.id, data: {...this.newOpinion}})
             this.newOpinion.context= ''
-            this.isInputActive= false
+            this.diactivateInput()
+        },
+        addLike(commentId) {
+            this.$store.commit('comments/ADD_COMMENT_LIKE',{productId: this.$route.params.id, commentId: commentId})
+        },
+        addDislikes(commentId) {
+            this.$store.commit('comments/ADD_COMMENT_DISLIKE',{productId: this.$route.params.id, commentId: commentId})
+        },
+        addReply(commentId) {
+            this.$store.commit('comments/ADD_COMMENT_REPLY',{productId: this.$route.params.id, commentId: commentId, data: {...this.newReply}})
+            this.newReply.reply_context= ''
+            this.diactivateInput()
         }
     },
     mounted() {
@@ -305,6 +359,7 @@ button {
 .product-page-container {
     padding-top: 108px;
     direction: rtl;
+    position: relative;
 }
 .product-page-direction {
     display: flex;
@@ -833,6 +888,7 @@ button {
 .opinion {
     padding: 12px 0;
     border-bottom: 1px solid #e0e0e6;
+    position: relative;
     .opinion_text {
         display: flex;
         align-items: center;
@@ -900,10 +956,16 @@ button {
         }
     }
 }
-.add_opinion_input {
-    position: absolute;
+.replyInput {
+    right: 20%;
+    top: -50%;
+}
+.opinion_input {
     right: 35%;
     top: 10%;
+}
+.add_opinion_input {
+    position: absolute;
     background-color: white;
     width: 460px;
     display: flex;
@@ -938,6 +1000,19 @@ button {
         width: 100%;
         padding: 16px 20px;
         border-bottom: 1px solid #e0e0e6;
+        h2{
+            margin-bottom: 16px;
+            font-size: 14px;
+            line-height: 2.15;
+            font-weight: 700;
+        }
+        p {
+            margin: 0 16px 8px 0;
+            color: #3f4064;
+            font-size: 14px;
+            line-height: 2.15;
+            font-weight: 700;
+        }
         input {
             border: 1px solid #c3c3ce;
             width: 100%;
@@ -983,5 +1058,28 @@ button {
     position: absolute;
     right: -20px;
     bottom: -100%;
+}
+.add_new_reply {
+    margin: 16px 40px 0 0;
+    border-top: 1px solid #f1f2f4;
+    padding: 16px 16px 0;
+    position: relative;
+    button {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        color: #19bfd3;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 2.17;
+        gap: 8px;
+        svg {
+            fill: #19bfd3;
+            path {
+                transform: scale(.8);
+            }
+        }
+    }
 }
 </style>
