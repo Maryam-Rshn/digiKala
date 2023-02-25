@@ -18,7 +18,7 @@
                         <div  v-if="!color" class="drop-down-on">
                             <div class="sidebar-color-filter-items">
                                 <div class="sidebar-color-filter" v-for="color in colors" :key="color">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" @change="filterProductsColor()" :value="color" v-model="checkedColors"/>
                                     <p>{{ color }}</p>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                         <div  v-if="!digiPlus" class="drop-down-on">
                             <div class="sidebar-digiPlus-filter-items">
                                 <div class="sidebar-color-filter">
-                                    <input type="checkbox" />
+                                    <input type="checkbox" @change="filterProductsDelivery()" v-model="isFastDeliverChecked" />
                                     <p>ارسال فوری</p>
                                 </div>
                             </div>
@@ -45,15 +45,16 @@
                     <div class="salesman-post existed-goods sidebar-shared-style">
                         <div>    
                             <p>فقط کالاهای موجود</p>
-                            <div class="checkbox-button">
-                                <span></span>
-                            </div>
+                            <label class="switch">
+                                <input type="checkbox" v-model="isProductAvailable" @click="filterAvailableProducts()">
+                                <span class="slider round"></span>
+                            </label>
                         </div>                        
                     </div>
                 </div>
                 <div class="section-wrapper">  
                     <div class="section">
-                        <div class="section-items" v-for="categoryProduct in categoryProducts" :key="categoryProduct.id">
+                        <div class="section-items" v-for="categoryProduct in selectedProducts" :key="categoryProduct.id">
                             <NuxtLink :to="{name: 'products-id', params: {id: categoryProduct.id } }" class="nuxtLink">
                                 <div class="picture">
                                     <img :src="categoryProduct.gallery[0]" alt="">
@@ -105,7 +106,11 @@ export default {
             color: true,
             colors: [
                 'آبی','خاکستری', 'سفید', 'زرد', 'مشکی', 'صورتی','سبز', 'نقره ای', 'قرمز', 'قهوه ای', 'بنفش'
-            ]
+            ],
+            checkedColors: [],
+            isFastDeliverChecked: false,
+            selectedProducts: [],
+            isProductAvailable: false
         } 
     },
     props: {
@@ -113,8 +118,40 @@ export default {
     },
 
     methods: {
-        
+        filterProductsColor() {
+            if(this.checkedColors.length === 0) {
+                this.selectedProducts = this.categoryProducts
+            }
+            else if(this.checkedColors.length === 1) {
+                this.selectedProducts = this.categoryProducts.filter((product) => {
+                    return product.colors.includes(this.checkedColors[0])
+                })
+            }
+        },
+        filterProductsDelivery() {
+            if(this.isFastDeliverChecked) {
+                this.selectedProducts = this.categoryProducts.filter((product) => {
+                    return product.special_delivery === true
+                })
+            }
+            else {
+                this.selectedProducts = this.categoryProducts
+            }
+        },
+        filterAvailableProducts() {
+            if(!this.isProductAvailable) {
+                this.selectedProducts = this.categoryProducts.filter((product) => {
+                    return product.qty > 0
+                }) 
+            }
+            else {
+                this.selectedProducts = this.categoryProducts
+            }
+        }
     },
+    mounted() {
+        this.selectedProducts = this.categoryProducts
+    }
 }
 </script>
 
@@ -273,34 +310,50 @@ export default {
         font-size: 16px;
         font-weight: 700;
     }
-    .checkbox-button{
-        width: 40px;
-        height: 20px;
-        border-radius: 15px;
-        border: 2px solid #a1a3a8;
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-        position: relative;
-        
-        span{
-            position: absolute;
-            left: 3px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #a1a3a8;
-        }
-    }
-    .checkbox-button:active{
-        border-color: #19bfd3;
-        background-color: #19bfd3 ;
-        
-        span{
-            right: 3px;
-            background-color: #fff;
-        }
-    }
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .price-filter{
